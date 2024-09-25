@@ -8,5 +8,15 @@ nav:
   - Footprinting: 
     - SMB: footprinting/smb.md
     - SNMP: footprinting/snmp.md
-      
-theme: readthedocs
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: deep-orange 
+    accent: orange 
+    toggle:
+      icon: material/weather-night
+      name: Switch to dark mode
+  font:
+    text: "Roboto"
+    code: "Roboto Mono"
