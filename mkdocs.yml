@@ -1,5 +1,12 @@
 site_name: Hacking Awesome CheatSheet
 nav: 
   - Home: index.md
-  - About: about.md
+  - Active Directory: 
+      - Enumeration: active-directory/enumeration.md
+      - Credentials Enumeration: active-directory/credentials.md
+      - Lateral Movement: active-directory/lateralmovement.md
+  - Footprinting: 
+    - SMB: footprinting/smb.md
+    - SNMP: footprinting/snmp.md
+      
 theme: readthedocs
