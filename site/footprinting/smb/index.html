@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../../active-directory/lateralmovement/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../snmp/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.37">
     
     
       
-        <title>Hacking Awesome CheatSheet</title>
+        <title>SMB - Hacking Awesome CheatSheet</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -65,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#nmap" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -77,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Hacking Awesome CheatSheet" class="md-header__button md-logo" aria-label="Hacking Awesome CheatSheet" data-md-component="logo">
+    <a href="../.." title="Hacking Awesome CheatSheet" class="md-header__button md-logo" aria-label="Hacking Awesome CheatSheet" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -97,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              SMB
             
           </span>
         </div>
@@ -172,7 +181,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Hacking Awesome CheatSheet" class="md-nav__button md-logo" aria-label="Hacking Awesome CheatSheet" data-md-component="logo">
+    <a href="../.." title="Hacking Awesome CheatSheet" class="md-nav__button md-logo" aria-label="Hacking Awesome CheatSheet" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -190,7 +199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -245,7 +254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/active-directory/enumeration/" class="md-nav__link">
+      <a href="../../active-directory/enumeration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -266,7 +275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/active-directory/credentials/" class="md-nav__link">
+      <a href="../../active-directory/credentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -287,7 +296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/active-directory/lateralmovement/" class="md-nav__link">
+      <a href="../../active-directory/lateralmovement/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -312,17 +321,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -336,7 +347,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Footprinting
@@ -347,10 +358,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/footprinting/smb/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    SMB
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -359,6 +388,120 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nmap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smbclient" class="md-nav__link">
+    <span class="md-ellipsis">
+      SMBclient
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#brute-forcing-user-rids" class="md-nav__link">
+    <span class="md-ellipsis">
+      Brute Forcing User RIDs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Brute Forcing User RIDs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bash
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crackmapexec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crackmapexec
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rpcclient" class="md-nav__link">
+    <span class="md-ellipsis">
+      RPCclient:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smbmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      SMBMap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum4linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enum4Linux:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hydra" class="md-nav__link">
+    <span class="md-ellipsis">
+      HYDRA
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -371,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/footprinting/snmp/" class="md-nav__link">
+      <a href="../snmp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -410,6 +553,110 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nmap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smbclient" class="md-nav__link">
+    <span class="md-ellipsis">
+      SMBclient
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#brute-forcing-user-rids" class="md-nav__link">
+    <span class="md-ellipsis">
+      Brute Forcing User RIDs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Brute Forcing User RIDs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bash
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crackmapexec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crackmapexec
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rpcclient" class="md-nav__link">
+    <span class="md-ellipsis">
+      RPCclient:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smbmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      SMBMap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enum4linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enum4Linux:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hydra" class="md-nav__link">
+    <span class="md-ellipsis">
+      HYDRA
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -420,8 +667,61 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  <h1>SMB</h1>
+
+<h3 id="nmap">Nmap</h3>
+<p><code>sudo nmap 10.129.14.128 -sV -sC -p139,445</code></p>
+<h3 id="smbclient">SMBclient</h3>
+<pre><code class="language-bash">smbclient -N -L //10.129.14.128 # no logon
+smbclient //10.129.14.128/notes # connecting to share
+</code></pre>
+<h3 id="download-files">Download Files</h3>
+<p><code>get file_name</code></p>
+<h3 id="brute-forcing-user-rids">Brute Forcing User RIDs</h3>
+<h4 id="bash">Bash</h4>
+<pre><code class="language-bash">for i in $(seq 500 1100);do rpcclient -N -U &quot;&quot; 10.129.14.128 -c &quot;queryuser 0x$(printf '%x\n' $i)&quot; | grep &quot;User Name\|user_rid\|group_rid&quot; &amp;&amp; echo &quot;&quot;;done
+</code></pre>
+<p>You can use script from <a href="https://github.com/SecureAuthCorp/impacket">Impacket</a> called <a href="https://github.com/SecureAuthCorp/impacket/blob/master/examples/samrdump.py">samrdump.py</a> alternatively
+<code>samrdump.py 10.129.14.128</code></p>
+<h3 id="crackmapexec">Crackmapexec</h3>
+<p><code>crackmapexec smb 10.129.14.128 --shares -u '' -p ''</code></p>
+<h3 id="rpcclient">RPCclient:</h3>
+<pre><code class="language-bash">rpcclient -U &quot;&quot; 10.129.14.128
+srvinfo
+enumdomains
+querydominfo
+netshareenumall
+netsharegetinfo notes
+enumdomusers
+queryuser 0x3e9
+querygroup 0x201
+</code></pre>
+<h3 id="smbmap">SMBMap</h3>
+<p><code>smbmap -H 10.129.14.128</code></p>
+<h3 id="enum4linux">Enum4Linux:</h3>
+<pre><code class="language-bash">git clone https://github.com/cddmp/enum4linux-ng.git
+cd enum4linux-ng
+pip3 install -r requirements.txt
+./enum4linux-ng.py 10.129.14.128 -A
+</code></pre>
+<h3 id="hydra">HYDRA</h3>
+<p><code>hydra -L user.list -P password.list smb://10.129.42.197</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -455,10 +755,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.d6f25eb3.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d6f25eb3.min.js"></script>
       
     
   </body>
