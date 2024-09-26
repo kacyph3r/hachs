@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../imap-pop3/">
+        <link rel="prev" href="../tns/">
       
       
-        <link rel="next" href="../ldap/">
+        <link rel="next" href="../rsync/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>SNMP - Hacking Awesome CheatSheet</title>
+        <title>IPMI - Hacking Awesome CheatSheet</title>
       
     
     
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SNMP
+              IPMI
             
           </span>
         </div>
@@ -563,17 +563,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../snmp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -582,7 +575,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -739,10 +731,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../ipmi/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -751,6 +750,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -878,21 +878,12 @@
                   
 
 
-  <h1>SNMP</h1>
+  <h1>IPMI</h1>
 
 <ol>
-<li>SNMPwalk: <code>snmpwalk -v2c -c public 10.129.14.128</code></li>
-<li>OneSixtyOne: <ol>
-<li><code>sudo apt install onesixtyone</code></li>
-<li><code>onesixtyone -c /opt/useful/SecLists/Discovery/SNMP/snmp.txt 10.129.14.128</code></li>
-</ol>
-</li>
-<li>Braa:<ol>
-<li><code>sudo apt install braa</code></li>
-<li><code>braa &lt;community string&gt;@&lt;IP&gt;:.1.3.6.*   # Syntax</code></li>
-<li><code>braa public@10.129.14.128:.1.3.6.* # example</code></li>
-</ol>
-</li>
+<li>Nmap: <code>sudo nmap -sU --script ipmi-version -p 623 ilo.inlanfreight.local</code></li>
+<li>Metasploit Version Scan: <code>msf6 &gt; use auxiliary/scanner/ipmi/ipmi_version</code></li>
+<li>Metasploit dump hashes: <code>msf6 &gt; use auxiliary/scanner/ipmi/ipmi_dumphashes</code></li>
 </ol>
 
 

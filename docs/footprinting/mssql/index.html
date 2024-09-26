@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../imap-pop3/">
+        <link rel="prev" href="../smb/">
       
       
-        <link rel="next" href="../ldap/">
+        <link rel="next" href="../mysql/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>SNMP - Hacking Awesome CheatSheet</title>
+        <title>MSSQL - Hacking Awesome CheatSheet</title>
       
     
     
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SNMP
+              MSSQL
             
           </span>
         </div>
@@ -563,17 +563,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../snmp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -582,7 +575,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -634,10 +626,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../mssql/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -646,6 +645,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -878,19 +878,14 @@
                   
 
 
-  <h1>SNMP</h1>
+  <h1>MSSQL</h1>
 
 <ol>
-<li>SNMPwalk: <code>snmpwalk -v2c -c public 10.129.14.128</code></li>
-<li>OneSixtyOne: <ol>
-<li><code>sudo apt install onesixtyone</code></li>
-<li><code>onesixtyone -c /opt/useful/SecLists/Discovery/SNMP/snmp.txt 10.129.14.128</code></li>
-</ol>
-</li>
-<li>Braa:<ol>
-<li><code>sudo apt install braa</code></li>
-<li><code>braa &lt;community string&gt;@&lt;IP&gt;:.1.3.6.*   # Syntax</code></li>
-<li><code>braa public@10.129.14.128:.1.3.6.* # example</code></li>
+<li>Nmap: <code>sudo nmap --script ms-sql-info,ms-sql-empty-password,ms-sql-xp-cmdshell,ms-sql-config,ms-sql-ntlm-info,ms-sql-tables,ms-sql-hasdbaccess,ms-sql-dac,ms-sql-dump-hashes --script-args mssql.instance-port=1433,mssql.username=sa,mssql.password=,mssql.instance-name=MSSQLSERVER -sV -p 1433 10.129.201.248</code></li>
+<li>MSSQL Ping in Metasploit: <code>msf6 auxiliary(scanner/mssql/mssql_ping) &gt; set rhosts 10.129.201.248</code></li>
+<li>Connecting with Mssqlclient.py<ol>
+<li>connect <code>python3 mssqlclient.py Administrator@10.129.201.248 -windows-auth</code></li>
+<li>Interact with: <code>select name from sys.databases</code></li>
 </ol>
 </li>
 </ol>
