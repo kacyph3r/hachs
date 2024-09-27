@@ -3,12 +3,38 @@ docs_dir: docs
 nav: 
   - Home: index.md
   - Active Directory: 
-      - Enumeration: active-directory/enumeration.md
-      - Credentials Enumeration: active-directory/credentials.md
+      - AD Enumeration: active-directory/adenumeration.md
+      - Credentials Haunting: active-directory/credentials.md
       - Lateral Movement: active-directory/lateralmovement.md
+      - Privilege Escalation: active-directory/privilegeescalation.md
+  - Enumeration:
+      - Nmap: enumeration/nmap.md
+      - Enumeration: enumeration/enumeration.md
   - Footprinting: 
-    - SMB: footprinting/smb.md
+    - Domain info: footprinting/domain-info.md
+    - FTP: footprinting/ftp.md
+    - SSH: footprinting/ssh.md
+    - SMTP: footprinting/smtp.md
+    - DNS: footprinting/dns.md
+    - IMAP/POP3: footprinting/imap-pop3.md
     - SNMP: footprinting/snmp.md
+    - LDAP: footprinting/ldap.md
+    - SMB: footprinting/smb.md
+    - MSSQL: footprinting/mssql.md
+    - MYSQL: footprinting/mysql.md
+    - NFS: footprinting/nfs.md
+    - RDP: footprinting/rdp.md
+    - ORACLE TNS: footprinting/tns.md
+    - IPMI: footprinting/ipmi.md
+    - RSYNC: footprinting/rsync.md
+    - RSERVICES: footprinting/rservices.md
+    - WinRM: footprinting/winrm.md
+    - MongoDB: footprinting/mongodb.md
+  - Web Information Gathering: webinfogathering.md
+  - Pivoting: pivoting.md
+  - Walkthrough: 
+    - HTB Academy: htb-academy/
+    - HTB Labs: htb-labs/
 theme:
   name: material
   palette:
