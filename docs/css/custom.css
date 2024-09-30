@@ -1,0 +1,21 @@
+/* Zmieniamy kolor tekstu w bloku kodu */
+.md-typeset code, .md-typeset pre {
+    color: #3be33b !important;
+}
+.md-nav__link--active {
+    color: #3be33b !important; /* Zastąp #4CAF50 wybranym odcieniem zielonego */
+}
+body {
+    color: #ffffff; /* Zamień #dcdcdc na inny, jaśniejszy odcień szarości, jeśli chcesz */
+}
+code {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 2px 5px; /* Opcjonalne, dodaje trochę przestrzeni wokół kodu */
+   /* background-color: #f5f5f5;  Opcjonalne tło */
+    border-radius: 5px; /* Lekko zaokrąglone rogi */
+}
+pre code span.hljs-comment {
+    color: #6a9955; /* Zamień na kolor, który chcesz dla komentarzy */
+    font-style: italic; /* Opcjonalne, aby komentarze były pochylone */
+}
