@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../initial/">
       
       
         <link rel="next" href="../credentials/">
@@ -255,6 +255,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../initial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Initial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -370,7 +391,16 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Enumerating Group Policy Objects (GPOs)">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enumerating-ad-trusts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enumerating AD Trusts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumerating AD Trusts">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -429,6 +459,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../lotl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Living Off the Land
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ACL Abuse Primer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../lateralmovement/" class="md-nav__link">
         
   
@@ -450,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../privilegeescalation.md" class="md-nav__link">
+      <a href="../privilege/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1215,7 +1287,16 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Enumerating Group Policy Objects (GPOs)">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enumerating-ad-trusts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enumerating AD Trusts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumerating AD Trusts">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1260,6 +1341,8 @@
 <li>Look at the ACL for a single domain user: <code>(Get-ACL "AD:$((Get-ADUser USER.NAME).distinguishedname)").access  | ? {$_.IdentityReference -eq "INLANEFREIGHT\cliff.moore"}</code></li>
 <li>Drill down further on this user to find all users with WriteProperty or GenericAll rights over the target user: <code>(Get-ACL "AD:$((Get-ADUser daniel.carter).distinguishedname)").access  | ? {$_.ActiveDirectoryRights -match "WriteProperty" -or $_.ActiveDirectoryRights -match "GenericAll"} | Select IdentityReference,ActiveDirectoryRights -Unique | ft -W</code></li>
 <li>Get GPO using GUID: <code>Get-GPO -Guid 831DE3ED-40B1-4703-ABA7-8EA13B2EB118</code></li>
+<li>What is the passwordhistorysize of the domain? <code>Get-ADDefaultDomainPasswordPolicy | Select-Object PasswordHistorySize</code></li>
+<li>Who is the group manager of the Citrix Admins group? <code>Get-ADUser -Identity "&lt;DistinguishedName of Manager&gt;" | Select-Object Name</code></li>
 </ol>
 <h2 id="cmd"><strong>CMD</strong></h2>
 <ol>
@@ -1268,6 +1351,7 @@
 <li><code>gpresult /r /S WS01</code></li>
 </ol>
 </li>
+<li>What is the passwordhistorysize of the domain? <code>net accounts</code></li>
 </ol>
 <h2 id="powerview-sharpview-useful-command"><strong>PowerView/ SharpView useful command</strong></h2>
 <ol>
@@ -1348,6 +1432,11 @@
 <li>Gathering GPO names: <code>Get-DomainGPO | select displayname</code></li>
 <li>Check which GPOs apply to a specific computer: <code>Get-DomainGPO -ComputerName WS01 | select displayname</code></li>
 <li>We can use the Get-DomainGPO and Get-ObjectAcl using the SID for the Domain Users group to see if this group has any permissions assigned to any GPOs: <code>Get-DomainGPO | Get-ObjectAcl | ? {$_.SecurityIdentifier -eq 'S-1-5-21-2974783224-3764228556-2640795941-513'}</code></li>
+</ol>
+<h3 id="enumerating-ad-trusts"><strong>Enumerating AD Trusts</strong></h3>
+<ol>
+<li>Get Domain Trust: <code>Get-DomainTrust</code></li>
+<li>Use the function Get-DomainTrustMapping to enumerate all trusts for our current domain and other reachable domains: <code>Get-DomainTrustMapping</code></li>
 </ol>
 <h4 id="links"><strong>Links</strong></h4>
 <ol>

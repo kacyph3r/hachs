@@ -3,10 +3,14 @@
 2. Look at the ACL for a single domain user: `(Get-ACL "AD:$((Get-ADUser USER.NAME).distinguishedname)").access  | ? {$_.IdentityReference -eq "INLANEFREIGHT\cliff.moore"}`
 3. Drill down further on this user to find all users with WriteProperty or GenericAll rights over the target user: `(Get-ACL "AD:$((Get-ADUser daniel.carter).distinguishedname)").access  | ? {$_.ActiveDirectoryRights -match "WriteProperty" -or $_.ActiveDirectoryRights -match "GenericAll"} | Select IdentityReference,ActiveDirectoryRights -Unique | ft -W`
 4. Get GPO using GUID: `Get-GPO -Guid 831DE3ED-40B1-4703-ABA7-8EA13B2EB118`
+5. What is the passwordhistorysize of the domain? `Get-ADDefaultDomainPasswordPolicy | Select-Object PasswordHistorySize`
+6. Who is the group manager of the Citrix Admins group? `Get-ADUser -Identity "<DistinguishedName of Manager>" | Select-Object Name`
+
 ## **CMD**
 1. Built-in tool that determines GPOs that have been applied to a given user or computer and their settings:
     1. `gpresult /r /user:harry.jones`
     2. `gpresult /r /S WS01`
+2. What is the passwordhistorysize of the domain? `net accounts`
 
 ## **PowerView/ SharpView useful command**
 1. Convert a username to the corresponding SID `.\SharpView.exe ConvertTo-SID -Name sally.jones`
@@ -69,6 +73,11 @@
 1. Gathering GPO names: `Get-DomainGPO | select displayname`
 2. Check which GPOs apply to a specific computer: `Get-DomainGPO -ComputerName WS01 | select displayname`
 3. We can use the Get-DomainGPO and Get-ObjectAcl using the SID for the Domain Users group to see if this group has any permissions assigned to any GPOs: `Get-DomainGPO | Get-ObjectAcl | ? {$_.SecurityIdentifier -eq 'S-1-5-21-2974783224-3764228556-2640795941-513'}`
+### **Enumerating AD Trusts**
+1. Get Domain Trust: `Get-DomainTrust`
+2. Use the function Get-DomainTrustMapping to enumerate all trusts for our current domain and other reachable domains: `Get-DomainTrustMapping`
+
+
 
 
 
