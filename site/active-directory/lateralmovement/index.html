@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../credentials/">
+        <link rel="prev" href="../ldap/">
       
       
-        <link rel="next" href="../../enumeration/nmap/">
+        <link rel="next" href="../privilege/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -46,6 +46,8 @@
       
     
     
+      <link rel="stylesheet" href="../../css/custom.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -61,13 +63,18 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="green">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#kerberos-double-hop-problem" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -251,6 +258,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../initial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Initial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../adenumeration/" class="md-nav__link">
         
   
@@ -290,6 +318,111 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../lotl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Living Off the Land
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ACL Abuse Primer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vulns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common Vulnerabilities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trust/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Attacking Domain Trust
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ldap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LDAP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -300,6 +433,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lateral Movement
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -309,6 +453,56 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kerberos-double-hop-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kerberos "Double Hop" Problem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kerberos "Double Hop" Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workaround-1-pscredential-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workaround #1: PSCredential Object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workaround-2-register-pssession-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workaround #2: Register PSSession Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -322,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../privilegeescalation.md" class="md-nav__link">
+      <a href="../privilege/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -992,6 +1186,26 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bash/bash_scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1010,6 +1224,47 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kerberos-double-hop-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kerberos "Double Hop" Problem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kerberos "Double Hop" Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workaround-1-pscredential-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workaround #1: PSCredential Object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workaround-2-register-pssession-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workaround #2: Register PSSession Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1025,7 +1280,26 @@
 
   <h1>Lateral Movement</h1>
 
-
+<h2 id="kerberos-double-hop-problem"><strong>Kerberos "Double Hop" Problem</strong></h2>
+<h4 id="workaround-1-pscredential-object"><strong>Workaround #1: PSCredential Object</strong></h4>
+<ol>
+<li>Try to execute a command: <code>*Evil-WinRM* PS C:\Users\backupadm\Documents&gt; import-module .\PowerView.ps1</code></li>
+<li>Check with klist: <code>*Evil-WinRM* PS C:\Users\backupadm\Documents&gt; klist</code></li>
+<li>Set up a PSCredential object and try again to execute a command: <ol>
+<li><code>*Evil-WinRM* PS C:\Users\backupadm\Documents&gt; $SecPassword = ConvertTo-SecureString '!qazXSW@' -AsPlainText -Force</code></li>
+<li><code>$Cred = New-Object System.Management.Automation.PSCredential('INLANEFREIGHT\backupadm', $SecPassword)</code></li>
+<li><code>*Evil-WinRM* PS C:\Users\backupadm\Documents&gt; get-domainuser -spn -credential $Cred | select samaccountname</code></li>
+</ol>
+</li>
+</ol>
+<h4 id="workaround-2-register-pssession-configuration"><strong>Workaround #2: Register PSSession Configuration</strong></h4>
+<ol>
+<li>Establishing a WinRM session on the remote host: <code>Enter-PSSession -ComputerName ACADEMY-AEN-DEV01.INLANEFREIGHT.LOCAL -Credential inlanefreight\backupadm</code></li>
+<li>Check tickets with klist: <code>klist</code></li>
+<li>One trick we can use here is registering a new session configuration using the Register-PSSessionConfiguration cmdlet: <code>Register-PSSessionConfiguration -Name backupadmsess -RunAsCredential inlanefreight\backupadm</code></li>
+<li>Restart the WinRM service by typing <code>Restart-Service WinRM</code> in current PSSession.</li>
+<li>Check again with <code>klist</code> and the double hop problem has been eliminated.</li>
+</ol>
 
 
 

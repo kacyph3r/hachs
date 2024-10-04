@@ -10,7 +10,7 @@
       
       
       
-        <link rel="next" href="active-directory/adenumeration/">
+        <link rel="next" href="active-directory/initial/">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -44,6 +44,8 @@
       
     
     
+      <link rel="stylesheet" href="css/custom.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -59,18 +61,13 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="green">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#hacking-awesome-cheatsheet" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -203,8 +200,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
       <a href="." class="md-nav__link md-nav__link--active">
         
@@ -262,6 +257,27 @@
   
   
     <li class="md-nav__item">
+      <a href="active-directory/initial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Initial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="active-directory/adenumeration/" class="md-nav__link">
         
   
@@ -304,6 +320,111 @@
   
   
     <li class="md-nav__item">
+      <a href="active-directory/lotl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Living Off the Land
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="active-directory/acl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ACL Abuse Primer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="active-directory/vulns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common Vulnerabilities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="active-directory/trust/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Attacking Domain Trust
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="active-directory/ldap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LDAP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="active-directory/lateralmovement/" class="md-nav__link">
         
   
@@ -325,7 +446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="active-directory/privilegeescalation.md" class="md-nav__link">
+      <a href="active-directory/privilege/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -995,6 +1116,26 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="bash/bash_scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1012,8 +1153,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -1028,7 +1167,26 @@
                   
 
 
-<h1 id="hacking-awesome-cheatsheet">HACKING AWESOME CHEATSHEET</h1>
+  <h1>Home</h1>
+
+<p>___ ___    <strong><em>_</em>  </strong><strong><em>_</em></strong>  <strong><em>_  </em>_.</strong><em> _______    ________                                  <br />
+ /   |   \  /  _  \ _   ___ |    |/ </em>|   |\      \  /  <strong><em>_</em>/                                  <br />
+/    ~    \/  /_\  \/    \  \/|      &lt; |   |/   |   \/   \  ___                                  <br />
+\    Y    /    |    \     _</strong>|    |  |   /    |    \    _\  \                                 <br />
+ _<strong>|<em>  /_</em></strong>|<strong>  /______  /____|<strong> _</strong>_<strong><em>|</em>_  /_</strong><strong><em>  /                                 <br />
+       \/         \/        \/        \/           \/        \/                                  <br />
+</em></strong><strong>  __      <strong><em>_</em></strong><strong><em>_</em>_ </strong><strong><em>_</em></strong><strong><em>_</em></strong><em>      __</em></strong>  <strong><em>_</em></strong><strong><em>_                        <br />
+  /  _  \/  \    /  _   </em></strong><strong>//   <strong><em>_</em>/_</strong></strong>  \    /     \ _   _____/                        <br />
+ /  /<em>\  \   \/\/   /|    __)<em> _</em></em></strong>  \  /   |   \  /  \ /  \ |    <strong>)<em>                         <br />
+/    |    \        / |        \/        \/    |    \/    Y    |        \                        <br />
+_</em></strong>|<strong>  /_<em>/\  / /____</em></strong>  /<strong><em>_</em></strong>  /_<strong><em>_</em>_  /_</strong><em>|__  /_______  /                        <br />
+        \/      \/          \/        \/         \/         \/        \/                         <br />
+<strong><em>_</em></strong>__   ___ <strong><em>_</em></strong><strong><em>_</em></strong>   <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_ ___ </em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em>
+_   ___ \ /   |   _   </strong>___/  /  _  _</em>    <strong><em>/   </em></strong><strong>//   |   _   _____/_   _____/_<em>    </em></strong>/
+/    \  \//    ~    \    <strong>)<em>  /  /<em>\  |    |  _</em></em></strong>  \/    ~    \    <strong>)<em>  |    <strong>)_   |    | <br />
+\     _</strong>\    Y    /        \/    |    \    |  /        \    Y    /        \ |        \  |    | <br />
+ ___</em></strong>  /_<strong>|<em>  /____</em></strong>  /_<strong><em>|</em>_  /</strong><strong>| /_______  /___|<em>  /____</em></strong>  //<strong><em>_</em></strong>  /  |____| <br />
+        \/       \/        \/         \/               \/       \/        \/         \/            </p>
 
 
 

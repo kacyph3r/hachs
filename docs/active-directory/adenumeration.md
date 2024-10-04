@@ -76,10 +76,10 @@
 ### **Enumerating AD Trusts**
 1. Get Domain Trust: `Get-DomainTrust`
 2. Use the function Get-DomainTrustMapping to enumerate all trusts for our current domain and other reachable domains: `Get-DomainTrustMapping`
-
-
-
-
+### **Various**
+1. Test Admin Access: `Test-AdminAccess -ComputerName ACADEMY-EA-MS01`
+2. Finding Users With SPN Set: `Get-DomainUser -SPN -Properties samaccountname,ServicePrincipalName`
+3. 
 
 #### **Links**
 1. [https://orange-cyberdefense.github.io/ocd-mindmaps/img/pentest_ad_dark_2022_11.svg](https://orange-cyberdefense.github.io/ocd-mindmaps/img/pentest_ad_dark_2022_11.svg)

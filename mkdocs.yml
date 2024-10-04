@@ -3,10 +3,16 @@ docs_dir: docs
 nav: 
   - Home: index.md
   - Active Directory: 
+      - Initial: active-directory/initial.md
       - AD Enumeration: active-directory/adenumeration.md
       - Credentials Haunting: active-directory/credentials.md
+      - Living Off the Land: active-directory/lotl.md
+      - ACL Abuse Primer: active-directory/acl.md
+      - Common Vulnerabilities: active-directory/vulns.md
+      - Attacking Domain Trust: active-directory/trust.md
+      - LDAP: active-directory/ldap.md
       - Lateral Movement: active-directory/lateralmovement.md
-      - Privilege Escalation: active-directory/privilegeescalation.md
+      - Privilege Escalation: active-directory/privilege.md
   - Enumeration:
       - Nmap: enumeration/nmap.md
       - Enumeration: enumeration/enumeration.md
@@ -35,15 +41,20 @@ nav:
   - Walkthrough: 
     - HTB Academy: htb-academy/
     - HTB Labs: htb-labs/
+  - Bash: bash/bash_scripts.md
 theme:
   name: material
   palette:
     scheme: slate
-    primary: deep-orange 
-    accent: orange 
+    primary: blue grey 
+    accent: green 
     toggle:
       icon: material/weather-night
       name: Switch to dark mode
   font:
     text: "Roboto"
     code: "Roboto Mono"
+  custom_dir: docs/css
+
+extra_css:
+  - css/custom.css
