@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../privilege/">
+        <link rel="prev" href="../bloodhound/">
       
       
         <link rel="next" href="../../enumeration/nmap/">
@@ -452,6 +452,27 @@
   
   <span class="md-ellipsis">
     Privilege Escalation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bloodhound/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BloodHound
   </span>
   
 
@@ -1334,6 +1355,9 @@ To speed up things use PowerView.ps1 or ActiveDirectory PowerShell module
 <li>Find shares on host in current domain: <code>Invoke-ShareFInder -Verbose</code></li>
 <li>Find sensitive files on computer in current domain: <code>Invoke-FileFinder -Verbose</code></li>
 <li>Get all fileservers of the domain: <code>Get-NetFileServer</code></li>
+<li>Get Domain Trust: <code>Get-NetDomainTrust</code></li>
+<li>Get details about current forest: <code>Get-NetForest</code>, <code>Get-NetForest -Forest forest-name</code></li>
+<li>Get all domains in current forest: <code>Get-NetForestDomain</code></li>
 </ol>
 <h2 id="activedirectory-module"><strong>ActiveDirectory Module</strong></h2>
 <ol>
@@ -1358,6 +1382,19 @@ To speed up things use PowerView.ps1 or ActiveDirectory PowerShell module
 <li>Get all members of the group: <code>Get-ADGroupMember -Identity "Domain Admins" -Recursive</code></li>
 <li>Get group membership for a user: <code>Get-ADPrincipalGroupMembership -Identity user-name</code></li>
 <li>Get local groups: `</li>
+<li>Get Domain Trust: <code>Get-ADTrust</code></li>
+<li>Get details about current forest: <code>Get-ADForest</code>, <code>Get-ADForest -Identity domain-name</code></li>
+<li>
+<p>Get all domains in current forest: <code>(Get-ADForest).Domains</code></p>
+</li>
+<li>
+<p>Find all machines on the current domain where the current user has local admin access: <code>Find-LocalAdminAccess -Verbose</code></p>
+<ol>
+<li>Check Find-WMILocalAdminAccess.ps1 also.
+Both are very noisy.</li>
+</ol>
+</li>
+<li></li>
 </ol>
 
 

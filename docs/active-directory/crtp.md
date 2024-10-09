@@ -36,6 +36,9 @@ To speed up things use PowerView.ps1 or ActiveDirectory PowerShell module
 19. Find shares on host in current domain: `Invoke-ShareFInder -Verbose`
 20. Find sensitive files on computer in current domain: `Invoke-FileFinder -Verbose`
 21. Get all fileservers of the domain: `Get-NetFileServer`
+22. Get Domain Trust: `Get-NetDomainTrust`
+23. Get details about current forest: `Get-NetForest`, `Get-NetForest -Forest forest-name`
+24. Get all domains in current forest: `Get-NetForestDomain`
 
 ## **ActiveDirectory Module**
 1. Import AD module:
@@ -57,3 +60,11 @@ To speed up things use PowerView.ps1 or ActiveDirectory PowerShell module
 15. Get all members of the group: `Get-ADGroupMember -Identity "Domain Admins" -Recursive`
 16. Get group membership for a user: `Get-ADPrincipalGroupMembership -Identity user-name`
 17. Get local groups: `
+18.  Get Domain Trust: `Get-ADTrust`
+19. Get details about current forest: `Get-ADForest`, `Get-ADForest -Identity domain-name`
+20. Get all domains in current forest: `(Get-ADForest).Domains`
+
+1. Find all machines on the current domain where the current user has local admin access: `Find-LocalAdminAccess -Verbose`
+     1. Check Find-WMILocalAdminAccess.ps1 also.
+Both are very noisy.
+2. 

