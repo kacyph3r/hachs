@@ -13,6 +13,8 @@ nav:
       - LDAP: active-directory/ldap.md
       - Lateral Movement: active-directory/lateralmovement.md
       - Privilege Escalation: active-directory/privilege.md
+      - BloodHound: active-directory/bloodhound.md
+      - CRTP: active-directory/crtp.md
   - Enumeration:
       - Nmap: enumeration/nmap.md
       - Enumeration: enumeration/enumeration.md
@@ -42,6 +44,8 @@ nav:
     - HTB Academy: htb-academy/
     - HTB Labs: htb-labs/
   - Bash: bash/bash_scripts.md
+  - Blue: 
+    - Phishing: blue/phising.md
 theme:
   name: material
   palette:

