@@ -39,6 +39,7 @@ nav:
     - WinRM: footprinting/winrm.md
     - MongoDB: footprinting/mongodb.md
   - Web Information Gathering: webinfogathering.md
+  - Files Transfer: filetransfer/filetransfer.md
   - Pivoting: pivoting.md
   - Walkthrough: 
     - HTB Academy: htb-academy/

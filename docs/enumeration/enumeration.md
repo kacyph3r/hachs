@@ -8,6 +8,8 @@
 ```bash
 for ip in 172.30.0.{1..254}; do ping -c 1 -W 1 $ip >/dev/null 2>&1 && echo "$ip is up"; done
 ```
+**NC port scanner**
+`nc -w 1 -v ip-address 1-100 2>&1 | grep -v refused`
 ### Rustscan
 ```bash
 sudo apt install cargo
