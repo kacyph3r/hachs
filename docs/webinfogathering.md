@@ -57,3 +57,4 @@
 3. `pip3 install -r requirements.txt`
 4. `chmod +x ./finalrecon.py`
 5. `./finalrecon.py --help`
+6. `./finalrecon.py --headers --whois --url http://inlanefreight.com`

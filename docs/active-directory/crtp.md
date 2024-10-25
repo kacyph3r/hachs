@@ -67,4 +67,11 @@ To speed up things use PowerView.ps1 or ActiveDirectory PowerShell module
 1. Find all machines on the current domain where the current user has local admin access: `Find-LocalAdminAccess -Verbose`
      1. Check Find-WMILocalAdminAccess.ps1 also.
 Both are very noisy.
-2. 
+2. Find local admin on all machines of the domain: `Invoke-EnumerateLocalAdmin -Verbose`
+3. Find computers where a domain admin (or specified user or group) has session: `Invoke-UserHunter - GroupName "RDPUsers"`
+4. Find computers where domain admin is logged-on: `Invoke-UserHunter -Stealth`
+## **Privilege Escalation**
+1. Tools:
+     1. PowerUp
+     2. BeRoot
+     3. PrivEsc
