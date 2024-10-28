@@ -561,6 +561,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Privilege Escalation
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1129,6 +1138,66 @@
   
   
     <li class="md-nav__item">
+      <a href="../../file-transfer/filetransfer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Files Transfer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../shells/shells/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shells & Payloads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metasploit/metasploit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metasploit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../pivoting/" class="md-nav__link">
         
   
@@ -1156,10 +1225,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1170,8 +1239,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             Walkthrough
           </label>
@@ -1260,10 +1329,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1274,8 +1343,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             Blue
           </label>
@@ -1357,6 +1426,15 @@
   <a href="#activedirectory-module" class="md-nav__link">
     <span class="md-ellipsis">
       ActiveDirectory Module
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Privilege Escalation
     </span>
   </a>
   
@@ -1457,7 +1535,18 @@ To speed up things use PowerView.ps1 or ActiveDirectory PowerShell module
 Both are very noisy.</li>
 </ol>
 </li>
-<li></li>
+<li>Find local admin on all machines of the domain: <code>Invoke-EnumerateLocalAdmin -Verbose</code></li>
+<li>Find computers where a domain admin (or specified user or group) has session: <code>Invoke-UserHunter - GroupName "RDPUsers"</code></li>
+<li>Find computers where domain admin is logged-on: <code>Invoke-UserHunter -Stealth</code></li>
+</ol>
+<h2 id="privilege-escalation"><strong>Privilege Escalation</strong></h2>
+<ol>
+<li>Tools:<ol>
+<li>PowerUp</li>
+<li>BeRoot</li>
+<li>PrivEsc</li>
+</ol>
+</li>
 </ol>
 
 

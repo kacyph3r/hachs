@@ -1116,6 +1116,66 @@
   
   
     <li class="md-nav__item">
+      <a href="../../file-transfer/filetransfer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Files Transfer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../shells/shells/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shells & Payloads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metasploit/metasploit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metasploit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../pivoting/" class="md-nav__link">
         
   
@@ -1143,10 +1203,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1157,8 +1217,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             Walkthrough
           </label>
@@ -1247,10 +1307,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1261,8 +1321,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             Blue
           </label>
@@ -1362,6 +1422,8 @@
 <p><strong>Bash</strong></p>
 <pre><code class="language-bash">for ip in 172.30.0.{1..254}; do ping -c 1 -W 1 $ip &gt;/dev/null 2&gt;&amp;1 &amp;&amp; echo &quot;$ip is up&quot;; done
 </code></pre>
+<p><strong>NC port scanner</strong>
+<code>nc -w 1 -v ip-address 1-100 2&gt;&amp;1 | grep -v refused</code></p>
 <h3 id="rustscan">Rustscan</h3>
 <pre><code class="language-bash">sudo apt install cargo
 cargo install rustscan

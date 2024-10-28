@@ -12,7 +12,7 @@
         <link rel="prev" href="../footprinting/mongodb/">
       
       
-        <link rel="next" href="../pivoting/">
+        <link rel="next" href="../file-transfer/filetransfer/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -1207,10 +1207,94 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reconnaissance-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reconnaissance Frameworks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reconnaissance Frameworks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finalrecon" class="md-nav__link">
+    <span class="md-ellipsis">
+      FinalRecon
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-transfer/filetransfer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Files Transfer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shells/shells/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shells & Payloads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metasploit/metasploit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metasploit
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1249,10 +1333,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1263,8 +1347,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             Walkthrough
           </label>
@@ -1353,10 +1437,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1367,8 +1451,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             Blue
           </label>
@@ -1552,6 +1636,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reconnaissance-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reconnaissance Frameworks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reconnaissance Frameworks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finalrecon" class="md-nav__link">
+    <span class="md-ellipsis">
+      FinalRecon
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1572,22 +1680,23 @@
 <h2 id="whois">Whois</h2>
 <p><code>whois inlanefreight.com</code></p>
 <h2 id="dig">Dig</h2>
-<pre><code class="language-bash">dig domain.com` #Performs a default A record lookup for the domain.
-dig domain.com A #Retrieves the IPv4 address (A record) associated with the domain.
-dig domain.com AAAA #Retrieves the IPv6 address (AAAA record) associated with the domain.
-dig domain.com MX #Finds the mail servers (MX records) responsible for the domain.
-dig domain.com NS #Identifies the authoritative name servers for the domain.
-dig domain.com TXT #Retrieves any TXT records associated with the domain.
-dig domain.com CNAME #Retrieves the canonical name (CNAME) record for the domain.
-dig domain.com SOA #Retrieves the start of authority (SOA) record for the domain.
-dig @1.1.1.1 domain.com #Specifies a specific name server to query; in this case 1.1.1.1
-dig +trace domain.com #Shows the full path of DNS resolution. |
-dig -x 192.168.1.1 #Performs a reverse lookup on the IP address 192.168.1.1 to find the associated host name. You may need to specify a name server.
-dig +short domain.com #Provides a short, concise answer to the query.
-dig +noall +answer domain.com #Displays only the answer section of the query output.
-dig domain.com ANY #Retrieves all available DNS records for the domain (Note: Many DNS servers ignore `ANY` queries to reduce load and prevent abuse, as per [RFC 8482](https://datatracker.ietf.org/doc/html/rfc8482)).
-</code></pre>
-<h2 id="subdomain-enumeration">Subdomain enumeration</h2>
+<ol>
+<li>Performs a default A record lookup for the domain: <code>dig domain.com</code></li>
+<li>Retrieves the IPv4 address (A record) associated with the domain: <code>dig domain.com A</code></li>
+<li>Retrieves the IPv6 address (AAAA record) associated with the domain: <code>dig domain.com AAAA</code></li>
+<li>Finds the mail servers (MX records) responsible for the domain: <code>dig domain.com MX</code></li>
+<li>Identifies the authoritative name servers for the domain: <code>dig domain.com NS</code></li>
+<li>Retrieves any TXT records associated with the domain: <code>dig domain.com TXT</code></li>
+<li>Retrieves the canonical name (CNAME) record for the domain: <code>dig domain.com CNAME</code></li>
+<li>Retrieves the start of authority (SOA) record for the domain: <code>dig domain.com SOA</code></li>
+<li>pecifies a specific name server to query; in this case 1.1.1.1: <code>dig @1.1.1.1 domain.com</code></li>
+<li>Shows the full path of DNS resolution: <code>dig +trace domain.com</code></li>
+<li>Performs a reverse lookup on the IP address 192.168.1.1 to find the associated host name. You may need to specify a name server: <code>dig -x 192.168.1.1</code></li>
+<li>Provides a short, concise answer to the query: <code>dig +short domain.com</code></li>
+<li>Displays only the answer section of the query output: <code>dig +noall +answer domain.com</code></li>
+<li>Retrieves all available DNS records for the domain (Note: Many DNS servers ignore <code>ANY</code> queries to reduce load and prevent abuse, as per <a href="https://datatracker.ietf.org/doc/html/rfc8482">RFC 8482</a>): <code>dig domain.com ANY</code></li>
+</ol>
+<h2 id="subdomain-enumeration"><strong>Subdomain enumeration</strong></h2>
 <h3 id="dnsenum">Dnsenum</h3>
 <p><code>dnsenum --enum inlanefreight.com -f /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -r</code></p>
 <h2 id="dns-zone-transfers"><strong>DNS Zone Transfers</strong></h2>
@@ -1611,6 +1720,23 @@ dig domain.com ANY #Retrieves all available DNS records for the domain (Note: Ma
 <li><code>wget -O ReconSpider.zip https://academy.hackthebox.com/storage/modules/144/ReconSpider.v1.2.zip</code></li>
 <li><code>unzip ReconSpider.zip</code></li>
 <li><code>python3 ReconSpider.py http://inlanefreight.com</code> </li>
+</ol>
+<h2 id="reconnaissance-frameworks"><strong>Reconnaissance Frameworks</strong></h2>
+<ol>
+<li>FinalRecon</li>
+<li>Recon-ng</li>
+<li>theHarvester</li>
+<li>SpiderFoot</li>
+<li>OSINT Framework</li>
+</ol>
+<h4 id="finalrecon"><strong>FinalRecon</strong></h4>
+<ol>
+<li><code>git clone https://github.com/thewhiteh4t/FinalRecon.git</code></li>
+<li><code>cd FinalRecon</code></li>
+<li><code>pip3 install -r requirements.txt</code></li>
+<li><code>chmod +x ./finalrecon.py</code></li>
+<li><code>./finalrecon.py --help</code></li>
+<li><code>./finalrecon.py --headers --whois --url http://inlanefreight.com</code></li>
 </ol>
 
 

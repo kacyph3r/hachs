@@ -41,6 +41,7 @@ nav:
   - Web Information Gathering: webinfogathering.md
   - Files Transfer: file-transfer/filetransfer.md
   - Shells & Payloads: shells/shells.md
+  - Metasploit: metasploit/metasploit.md
   - Pivoting: pivoting.md
   - Walkthrough: 
     - HTB Academy: htb-academy/
