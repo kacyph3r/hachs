@@ -44,7 +44,9 @@ nav:
   - Metasploit: metasploit/metasploit.md
   - Passwords Attack: passwords/passwords.md
   - Pivoting: pivoting.md
-  - Sqlmap: web/sqlmap.md
+  - Web Pentesting:
+      - Sqlmap: web/sqlmap.md
+      - FUFF: web/fuff.md
   - Walkthrough: 
     - HTB Academy: htb-academy/
     - HTB Labs: htb-labs/
